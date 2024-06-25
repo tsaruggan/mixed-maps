@@ -17,13 +17,27 @@ class RouteBuildingBlock extends Component {
         };
     }
 
+    handleAddressTextFieldChange(addressType, event){
+        this.props.onAddressChange(this.props.index, addressType, event.target.value);
+    };
+
     render() {
         const backgroundColor = `rgba(${transportOptions.find(option => option.name == this.state.selectedTransportOption).color}, 0.25)` 
         return (
             <div className={styles.routeBuildingBlock} style={{backgroundColor: backgroundColor}}>
                 <div style={{height: '84px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
-                    <AddressTextField name="starting" placeholder="Choose starting point..." />
-                    <AddressTextField name="destination" placeholder="Choose destination..." />
+                    <AddressTextField 
+                        name="starting" 
+                        placeholder="Choose starting point..."
+                        value={this.props.startingAddress}
+                        onChange={(e) => this.handleAddressTextFieldChange('startingAddress', e)} 
+                    />
+                    <AddressTextField 
+                        name="destination" 
+                        placeholder="Choose destination..."
+                        value={this.props.destinationAddress}
+                        onChange={(e) => this.handleAddressTextFieldChange('destinationAddress', e)} 
+                    />
                 </div>
                 <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', paddingTop: '16px'}}>
                     {transportOptions.map((option) => (
@@ -43,13 +57,15 @@ class RouteBuildingBlock extends Component {
 export default RouteBuildingBlock;
 
 
-function AddressTextField({ name, placeholder }) {
+function AddressTextField({ name, placeholder, value, onChange }) {
     return (
         <input 
             type="text" 
             className={styles.addressTextField} 
             name={name}
             placeholder={placeholder}
+            value={value}
+            onChange={onChange}
         />
     );
 }
@@ -60,13 +76,11 @@ function TransportOptionButton({ transportOption, isActive, handleOnClick }) {
     const buttonStyle = {
         backgroundColor: backgroundColor, 
     };
-    if (isActive) {
-        Object.assign(buttonStyle, styles.active); 
-    }
     return (
         <button 
             className={`${styles.transportOptionButton} ${isActive ? styles.active : ''}`} 
-            style={buttonStyle} onClick={handleOnClick}> 
+            style={buttonStyle} 
+            onClick={handleOnClick}> 
             {transportOption.name}
         </button>
     );
