@@ -25,7 +25,7 @@ class RouteBuildingBlock extends Component {
                     <AddressTextField name="starting" placeholder="Choose starting point..." />
                     <AddressTextField name="destination" placeholder="Choose destination..." />
                 </div>
-                <div style={{width: '400px', display: 'flex', justifyContent: 'space-between', paddingTop: '16px'}}>
+                <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', paddingTop: '16px'}}>
                     {transportOptions.map((option) => (
                         <TransportOptionButton 
                             key={option.name}
