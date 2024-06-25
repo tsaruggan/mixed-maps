@@ -7,3 +7,46 @@
   min-height: 100vh;
 }
 
+.routeBuildingBlock {
+  width: 468px;
+  height: 166px;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.addressTextField {
+  width: 400px;
+  height: 36px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  padding: 14px;
+}
+
+.addressTextField:focus {
+  outline: none;
+}
+
+.transportOptionButton {
+  width: 88px;
+  height: 36px;
+  border: 1.5px solid rgba(0, 0, 0, 0.5);
+  border-radius: 36px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.transportOptionButton:hover {
+  color: #000000;
+  border: 2px solid #000000;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.active {
+  border: 2px solid #000000;
+  font-weight: 600;
+  color: #000000;
+}
