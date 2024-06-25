@@ -22,7 +22,7 @@ class RouteBuildingBlock extends Component {
     };
 
     render() {
-        const backgroundColor = `rgba(${transportOptions.find(option => option.name == this.state.selectedTransportOption).color}, 0.25)` 
+        const backgroundColor = `rgba(${transportOptions.find(option => option.name == this.state.selectedTransportOption).color}, 0.25)`;
         return (
             <div className={styles.routeBuildingBlock} style={{backgroundColor: backgroundColor}}>
                 <div style={{height: '84px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
@@ -30,13 +30,15 @@ class RouteBuildingBlock extends Component {
                         name="starting" 
                         placeholder="Choose starting point..."
                         value={this.props.startingAddress}
-                        onChange={(e) => this.handleAddressTextFieldChange('startingAddress', e)} 
+                        onChange={(e) => this.handleAddressTextFieldChange('startingAddress', e)}
+                        disabled={this.props.index != 0}
                     />
                     <AddressTextField 
                         name="destination" 
                         placeholder="Choose destination..."
                         value={this.props.destinationAddress}
                         onChange={(e) => this.handleAddressTextFieldChange('destinationAddress', e)} 
+                        disabled={false}
                     />
                 </div>
                 <div style={{width: '100%', display: 'flex', justifyContent: 'space-between', paddingTop: '16px'}}>
@@ -57,7 +59,7 @@ class RouteBuildingBlock extends Component {
 export default RouteBuildingBlock;
 
 
-function AddressTextField({ name, placeholder, value, onChange }) {
+function AddressTextField({ name, placeholder, value, onChange, disabled }) {
     return (
         <input 
             type="text" 
@@ -66,6 +68,7 @@ function AddressTextField({ name, placeholder, value, onChange }) {
             placeholder={placeholder}
             value={value}
             onChange={onChange}
+            disabled={disabled}
         />
     );
 }

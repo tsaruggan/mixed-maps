@@ -28,6 +28,12 @@
   outline: none;
 }
 
+.addressTextField:disabled {
+  border-color: #A6A6A6;
+  background-color: #f0f0f0;
+  color: #A6A6A6;
+}
+
 .transportOptionButton {
   width: 88px;
   height: 36px;
@@ -57,4 +63,26 @@
 
 .routeBuilder > * {
   margin-bottom: 10px;
+}
+
+.actionButton {
+  width: 88px;
+  height: 36px;
+  border: 0px;
+  border-radius: 36px;
+  font-weight: 600;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-left: 12px;
+}
+
+.actionButton:hover {
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+
+.actionButton:disabled {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 500;
+  pointer-events: none;
 }
