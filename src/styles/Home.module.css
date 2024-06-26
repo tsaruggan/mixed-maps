@@ -8,7 +8,7 @@
 }
 
 .routeBuildingBlock {
-  width: 468px;
+  width: 100%;
   height: 166px;
   border-radius: 4px;
   padding: 16px;
@@ -39,7 +39,7 @@
   height: 36px;
   border: 1.5px solid rgba(0, 0, 0, 0.5);
   border-radius: 36px;
-  font-weight: 500;
+  font-weight: 600;
   color: rgba(0, 0, 0, 0.5);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -47,18 +47,18 @@
 .transportOptionButton:hover {
   color: #000000;
   border: 2px solid #000000;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .active {
   border: 2px solid #000000;
-  font-weight: 600;
+  font-weight: 700;
   color: #000000;
 }
 
 .routeBuilder {
-  
+  width: 468px;
 }
 
 .routeBuilder > * {
@@ -85,4 +85,31 @@
   color: rgba(0, 0, 0, 0.4);
   font-weight: 500;
   pointer-events: none;
+}
+
+.routeOverviewContainer {
+  width: 468px;
+}
+
+.routeDetailsContainer {
+  background-color: rgba(166, 166, 166, 0.15);
+  padding: 16px;
+  border-radius: 4px;
+}
+
+.routeDetailsTitleContainer{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.routeDirectionsBlock {
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.routeDetailsContainer > .routeDirectionsBlock {
+  margin-top: 12px;
 }
