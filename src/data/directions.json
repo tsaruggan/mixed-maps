@@ -1,0 +1,1274 @@
+{
+    "directions": [
+        {
+            "geocoded_waypoints": [
+                {
+                    "geocoder_status": "OK",
+                    "place_id": "ChIJH-OQUI0_K4gRQnSjm8XVrgc",
+                    "types": [
+                        "premise"
+                    ]
+                },
+                {
+                    "geocoder_status": "OK",
+                    "partial_match": true,
+                    "place_id": "ChIJdcjMUL43K4gRc4i711HKH00",
+                    "types": [
+                        "establishment",
+                        "point_of_interest",
+                        "transit_station"
+                    ]
+                }
+            ],
+            "routes": [
+                {
+                    "bounds": {
+                        "northeast": {
+                            "lat": 43.6555614,
+                            "lng": -79.53589769999999
+                        },
+                        "southwest": {
+                            "lat": 43.6167161,
+                            "lng": -79.7168131
+                        }
+                    },
+                    "copyrights": "Map data ©2024 Google",
+                    "legs": [
+                        {
+                            "distance": {
+                                "text": "20.0 km",
+                                "value": 19958
+                            },
+                            "duration": {
+                                "text": "35 mins",
+                                "value": 2082
+                            },
+                            "duration_in_traffic": {
+                                "text": "36 mins",
+                                "value": 2144
+                            },
+                            "end_address": "Kipling, Etobicoke, ON M9B, Canada",
+                            "end_location": {
+                                "lat": 43.63782399999999,
+                                "lng": -79.53589769999999
+                            },
+                            "start_address": "7120 St Barbara Blvd, Mississauga, ON L5W 0C9, Canada",
+                            "start_location": {
+                                "lat": 43.6418841,
+                                "lng": -79.7168131
+                            },
+                            "steps": [
+                                {
+                                    "distance": {
+                                        "text": "0.4 km",
+                                        "value": 366
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 52
+                                    },
+                                    "end_location": {
+                                        "lat": 43.6393761,
+                                        "lng": -79.71390009999999
+                                    },
+                                    "html_instructions": "Head \u003cb\u003esoutheast\u003c/b\u003e on \u003cb\u003eSt Barbara Blvd\u003c/b\u003e toward \u003cb\u003eDerrydale Dr\u003c/b\u003e",
+                                    "polyline": {
+                                        "points": "wxjiG`upeN^i@JM\\i@d@q@T[TWPQBCJI`@[ZU\\YfAeABENQX_@Va@d@w@BC`@u@"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.6418841,
+                                        "lng": -79.7168131
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "2.3 km",
+                                        "value": 2348
+                                    },
+                                    "duration": {
+                                        "text": "4 mins",
+                                        "value": 256
+                                    },
+                                    "end_location": {
+                                        "lat": 43.6555466,
+                                        "lng": -79.69548010000001
+                                    },
+                                    "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eDerry Rd W\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003ePeel Regional Rd 5\u003c/b\u003e",
+                                    "maneuver": "turn-left",
+                                    "polyline": {
+                                        "points": "cijiGzbpeNR]oCcDyBiCeD{DMMmAuASUw@}@s@y@u@_AKKi@q@UWiB{BOQ{@gAw@_AY_@u@aAaDyDiAqAQSk@q@YYw@}@e@k@CEs@u@qAyA_@a@c@i@{AgBs@{@oB{B}@cAa@g@]a@[_@Y[CCeCkCSQgAkAgAiASUw@y@Y_@W[oB_CEEmAyACE}AgBMOeAmAu@{@_@g@g@q@eBsBu@w@EG"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.6393761,
+                                        "lng": -79.71390009999999
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "4.6 km",
+                                        "value": 4619
+                                    },
+                                    "duration": {
+                                        "text": "7 mins",
+                                        "value": 402
+                                    },
+                                    "end_location": {
+                                        "lat": 43.6260428,
+                                        "lng": -79.6553905
+                                    },
+                                    "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eKennedy Rd S\u003c/b\u003e",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "enmiGvoleNAsAf@y@r@iAzA_CtAqB~@uAzCoErAoBjAeBd@q@`AwA`@o@rAmBfBmCFIz@kAFKnBuC~@wAJUFYl@{@`@i@dA}A\\Yr@cAvAyBPQnBuCHI`@q@Nc@`@k@HMV]FKzA{BLQl@_Az@oAlAgBpAoB|@qAb@o@Ze@R[`@m@jBoCxAuBHOV[nAmB|@qAVOBEbDyEhBmCT[BYjCyDJOVMr@cAXc@`@k@l@}@p@aAj@{@r@cAXc@l@_ANa@`@k@lAgBbAyAT]j@y@DIRYJM?C^g@FIHObA}AzAwBj@}@HKnAeB~AcCp@eAlAiBhAgBhAaBh@w@JOvAuB`BcC`AyAf@u@RWLS~@uANSd@s@r@eAhDcFPU|A_CfCsDLSPWbA}ALQt@eA~@uAFKj@w@"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.6555466,
+                                        "lng": -79.69548010000001
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "1.4 km",
+                                        "value": 1381
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 138
+                                    },
+                                    "end_location": {
+                                        "lat": 43.6333977,
+                                        "lng": -79.64163119999999
+                                    },
+                                    "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eMatheson Blvd E\u003c/b\u003e",
+                                    "maneuver": "turn-left",
+                                    "polyline": {
+                                        "points": "wugiGdudeNkA_Cq@wA]w@s@cB@Ou@iBuB}EYq@Sg@Ma@oBqEWi@EIGKAAIE_AyBi@kAACSe@EMO[Se@?ASc@?AO_@EKSg@EGCEKW?AISIQUg@KUISSe@AASe@O_@m@wAq@_Bi@qA}@qBSg@?Ae@gAeAgCe@kAIQ_@}@Wc@Wc@g@y@"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.6260428,
+                                        "lng": -79.6553905
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "1.2 km",
+                                        "value": 1167
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 112
+                                    },
+                                    "end_location": {
+                                        "lat": 43.6270044,
+                                        "lng": -79.63043379999999
+                                    },
+                                    "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eTomken Rd\u003c/b\u003e",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "wciiGd_beNR]dC}DZg@FKR[X_@z@wAj@{@`AuAXc@NS`BaC~DgGR]NShBuCP[Ti@N_@L]Po@L_@Ny@XeBLgA@MLoAFi@Hg@F_@DQLc@J]Tq@BGJYLWBGLWBGZk@Va@DGDI\\k@"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.6333977,
+                                        "lng": -79.64163119999999
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "1.2 km",
+                                        "value": 1219
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 121
+                                    },
+                                    "end_location": {
+                                        "lat": 43.6353252,
+                                        "lng": -79.6210318
+                                    },
+                                    "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eEglinton Ave E\u003c/b\u003e",
+                                    "maneuver": "turn-left",
+                                    "polyline": {
+                                        "points": "w{giGdy_eNR[SUe@k@]_@Y[GIaAaAYWQOECKIGCCAC?KBSYY]EGQQUUk@q@KMw@}@uCaDuA{AMQaDqDkByB_@a@Y[}AoBaAgAi@o@SSACMMqCcDOOa@c@s@{@?GAG?ECEMSMMe@k@cAmA"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.6270044,
+                                        "lng": -79.63043379999999
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "3.0 km",
+                                        "value": 2984
+                                    },
+                                    "duration": {
+                                        "text": "5 mins",
+                                        "value": 327
+                                    },
+                                    "end_location": {
+                                        "lat": 43.61678089999999,
+                                        "lng": -79.5946759
+                                    },
+                                    "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eDixie Rd\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003ePeel Regional Rd 4 S\u003c/b\u003e",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "yoiiGl~}dNKc@EMCK?G?MBa@Xc@n@aAjBsCZg@Xc@dBiCjAeBrA}BZe@\\g@zA_Cb@o@Xa@n@{@HMZa@^e@LSLUp@_ADE\\e@R[PYPYT_@HK~CgFDEVc@Xc@lB_DfAeBHM|@qALQFKRYT[RYNUJQRWBGf@w@r@cANS^m@|@qA\\k@PYZg@lDaGDGv@gAp@cA\\i@f@{@BEfAkBT_@p@aAXc@PU^k@@Az@kAV[?ARSf@o@d@o@JOTYPUx@eAP[jBkCf@u@`@m@^o@NUl@eARYh@y@p@eAbAgB@A`A_Bb@q@?ALQJQd@s@HQ@?LSNWlA}BzBeDt@qA"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.6353252,
+                                        "lng": -79.6210318
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "5.3 km",
+                                        "value": 5288
+                                    },
+                                    "duration": {
+                                        "text": "9 mins",
+                                        "value": 541
+                                    },
+                                    "end_location": {
+                                        "lat": 43.64060569999999,
+                                        "lng": -79.54054739999999
+                                    },
+                                    "html_instructions": "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eBloor St\u003c/b\u003e",
+                                    "maneuver": "turn-left",
+                                    "polyline": {
+                                        "points": "{{eiGvyxdNJUM]a@c@cAcA[Ou@u@eAgAOQqAyA{AaBa@e@_BiBkBsBkCwCOQe@i@UWsA{Am@m@s@{@g@i@mAsAkAqAkAuAw@_Am@q@q@u@KI}@gAWUIMQQ_@c@SS_@a@[]SUIICGGGII?AKMGKKOCEGIOW}C}EYe@a@m@[g@U]KOU]aBiCKQEGCEg@w@U]EGCGcA_ByA}BoAkB{@sAQY}@uAi@{@S[KQm@cAUi@CGQa@EMEQO_@{@mCAAWw@_@kAM_@Sk@]eAM]c@sAe@wAMc@KYI]Mo@AACOUoAe@cCI_@CQ]iBGa@]cBSgAACEUO}@Gc@Ge@O{@Io@Ie@s@aF_@}B[sBKu@[wBEUk@}DESIeAU_Ba@kCCc@U}AQkACQIo@CUIg@G_@Io@CMSuAIi@Km@Gg@Mw@Im@CQIg@Ee@SqAEMGc@Ik@?AIm@Ia@Gg@AKG[GW[}BCMAE?AACCEIKG]Ko@M_AGc@My@CMQiAIk@QsACMMy@Mw@Kq@U_BAMOgACSWaBk@iEi@uDSsAU}AAKGc@G[S{AMy@OgAMw@_@mC]aCEUKy@EYg@wDAe@QyAU{AMs@UgBE]MeACKYqB"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.61678089999999,
+                                        "lng": -79.5946759
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "0.5 km",
+                                        "value": 502
+                                    },
+                                    "duration": {
+                                        "text": "2 mins",
+                                        "value": 111
+                                    },
+                                    "end_location": {
+                                        "lat": 43.6373143,
+                                        "lng": -79.53663039999999
+                                    },
+                                    "html_instructions": "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eAukland Rd\u003c/b\u003e",
+                                    "maneuver": "turn-right",
+                                    "polyline": {
+                                        "points": "ypjiGlgndN~@[NEDCDADCBCFEDCBCBCBCFKNULSPYLQBEFEBCFGFEHG^Yd@]DEDEBEBEBCBEBEDMBEDIDSDQLo@He@HWFWDKFOLWBGHOTa@PWHIFGFGDCJGJI\\QLIRKLIDCBCBCBEBCBC@E@G@G"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.64060569999999,
+                                        "lng": -79.54054739999999
+                                    },
+                                    "travel_mode": "DRIVING"
+                                },
+                                {
+                                    "distance": {
+                                        "text": "84 m",
+                                        "value": 84
+                                    },
+                                    "duration": {
+                                        "text": "1 min",
+                                        "value": 22
+                                    },
+                                    "end_location": {
+                                        "lat": 43.63782399999999,
+                                        "lng": -79.53589769999999
+                                    },
+                                    "html_instructions": "\u003cb\u003eAukland Rd\u003c/b\u003e turns \u003cb\u003eleft\u003c/b\u003e and becomes \u003cb\u003eSt Albans Rd\u003c/b\u003e",
+                                    "polyline": {
+                                        "points": "e|iiG|nmdN?EAC?EACAGCGEGSW_@c@a@i@"
+                                    },
+                                    "start_location": {
+                                        "lat": 43.6373143,
+                                        "lng": -79.53663039999999
+                                    },
+                                    "travel_mode": "DRIVING"
+                                }
+                            ],
+                            "traffic_speed_entry": [],
+                            "via_waypoint": []
+                        }
+                    ],
+                    "overview_polyline": {
+                        "points": "wxjiG`upeNnBsC`AiAfBuAjAkAh@q@bBsCR]oCcD_HeIgDwD_DwDkEmFiH{IaDqDuCeDqFmGcGcHwAaBiHsH}BkCgEeFgFaGgAyA{CkDEGAsAzAcCpDqFzEeHfG_JdFuHrFeIRo@nAeBdA}A\\YjC}D`CgDj@{@Nc@`@k@`@k@~CyEnKyOfFqHlC_EZUlGgJT[BYjCyDJOVMlAgBnAiBjDeFl@_ANa@nBsCjC{D~@sApDoFdFsHrGyJzJ}NjQqWzG{J}BwEqA{C@Ou@iBoCoGa@iAgC{FMUKG_CoFi@qAsA_DuAaD_GkN{CmHw@aB_A}A|DoGtCoElEoGlIoMf@eA\\}@^oAh@_Dd@oEPgARu@p@qBb@_A~@_Bp@gAy@aAw@{@iAkA}@u@KEOBeAqAaPuQkC{CwBkCaCoCqEeFs@{@?GAMQYs@y@cAmAKc@IY?UBa@Xc@zCuEt@kApDoFnBcDvDyFtBqCrAoBtAuBdEyGfFmI|A}BlAeB^i@j@_A`DwExFoJlC}DhCmE|BgDtAkBlBcCf@o@jAaBrCaE`A}AzBoDvFgJ~@yA|AuCzBeDt@qAJUM]eBgB[Ou@u@uAyAoHkImHgIkE}EuB}BwCgDcDqDqB}BqC_D}@mA}H}L{DgGgLqQ_@m@cAmBa@iAeEeMwAiEY}@WmAaAeFs@}Dy@eEo@cEqDmVq@qEIeAU_Ba@kCCc@g@iD[_Ci@sDiAeIgAiHu@wEMQSmAg@kDoB{MmD}VqBoNu@kFg@wDAe@g@uDc@{CScB]}BnAa@TMTQtAqBnB}ANURc@b@{B^kAp@qAj@q@pBkANQHYCSEOY_@aAmA"
+                    },
+                    "summary": "Bloor St",
+                    "warnings": [],
+                    "waypoint_order": []
+                }
+            ],
+            "status": "OK"
+        },
+        {
+            "geocoded_waypoints" : 
+            [
+               {
+                  "geocoder_status" : "OK",
+                  "partial_match" : true,
+                  "place_id" : "ChIJdcjMUL43K4gRc4i711HKH00",
+                  "types" : 
+                  [
+                     "establishment",
+                     "point_of_interest",
+                     "transit_station"
+                  ]
+               },
+               {
+                  "geocoder_status" : "OK",
+                  "place_id" : "ChIJKQDzOA41K4gRajQDdyzD990",
+                  "types" : 
+                  [
+                     "establishment",
+                     "point_of_interest"
+                  ]
+               }
+            ],
+            "routes" : 
+            [
+               {
+                  "bounds" : 
+                  {
+                     "northeast" : 
+                     {
+                        "lat" : 43.6688766,
+                        "lng" : -79.38033299999999
+                     },
+                     "southwest" : 
+                     {
+                        "lat" : 43.6376286,
+                        "lng" : -79.5354249
+                     }
+                  },
+                  "copyrights" : "Map data ©2024 Google",
+                  "legs" : 
+                  [
+                     {
+                        "arrival_time" : 
+                        {
+                           "text" : "3:17 p.m.",
+                           "time_zone" : "America/Toronto",
+                           "value" : 1719861456
+                        },
+                        "departure_time" : 
+                        {
+                           "text" : "2:38 p.m.",
+                           "time_zone" : "America/Toronto",
+                           "value" : 1719859132
+                        },
+                        "distance" : 
+                        {
+                           "text" : "15.4 km",
+                           "value" : 15414
+                        },
+                        "duration" : 
+                        {
+                           "text" : "39 mins",
+                           "value" : 2324
+                        },
+                        "end_address" : "65 Front St W, Toronto, ON M5J 1E6, Canada",
+                        "end_location" : 
+                        {
+                           "lat" : 43.64525159999999,
+                           "lng" : -79.38037539999999
+                        },
+                        "start_address" : "Kipling, Etobicoke, ON M9B, Canada",
+                        "start_location" : 
+                        {
+                           "lat" : 43.6376286,
+                           "lng" : -79.5354249
+                        },
+                        "steps" : 
+                        [
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "11.5 km",
+                                 "value" : 11476
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "23 mins",
+                                 "value" : 1352
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.667248,
+                                 "lng" : -79.403893
+                              },
+                              "html_instructions" : "Subway towards Bloor-Danforth to Kennedy Station",
+                              "polyline" : 
+                              {
+                                 "points" : "e~iiGjgmdNc@CgGsH}LsLgMoLaAoAo@sAk@kAk@uBOeAu@sFk@{EQkA]oC_@_CWaBu@_Ge@gEe@uFcAgK?Ew@sFy@uFIeAU_BG_@q@aFi@wD]mBACYmB{@mJCe@YeCg@_Cq@_Ea@eCo@cFu@}Es@gFeBgMKeAEg@AqABkAB_A@mBJiARkAPsAVeBL}@^iBVeAh@eCNk@p@cCrCeKb@gBPyD@yCDwCCmAEgAK_AQiASkAI[M]OYOQ[g@a@y@i@_A_@{@So@c@{Co@iEG[SkAe@_Be@_Ba@cC{@sGi@yDU_BQwAk@yDUgBIw@OcAYsBIm@Mw@u@sFo@wE[yBs@eFy@gGmAiJK_ASyAc@eDgA}H{@qGy@cGi@gE[sB]_CE_@MgAs@yFG_@yAcKs@eFa@wCOaAEU{A{Iy@aFsBsMgAyHgAgHSsBGaBIgBCiAO{GImCAkB@w@CcAUmCa@sDm@iFk@eEAK?Cu@{FEu@c@eDS_Ba@yCYiBcAqGm@_De@uBc@iC[eCi@iEGe@CSe@uDIk@s@gFu@qFq@cF{AqLWkBo@}EQqA]kCa@_Ci@yC_A}Ds@qFy@gHg@sDCM[cCa@{Cm@oFa@aDQoAe@uD_@gD[aCMeAFC"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6376286,
+                                 "lng" : -79.5354249
+                              },
+                              "transit_details" : 
+                              {
+                                 "arrival_stop" : 
+                                 {
+                                    "location" : 
+                                    {
+                                       "lat" : 43.667248,
+                                       "lng" : -79.403893
+                                    },
+                                    "name" : "Spadina"
+                                 },
+                                 "arrival_time" : 
+                                 {
+                                    "text" : "3:01 p.m.",
+                                    "time_zone" : "America/Toronto",
+                                    "value" : 1719860484
+                                 },
+                                 "departure_stop" : 
+                                 {
+                                    "location" : 
+                                    {
+                                       "lat" : 43.6376286,
+                                       "lng" : -79.5354249
+                                    },
+                                    "name" : "Kipling"
+                                 },
+                                 "departure_time" : 
+                                 {
+                                    "text" : "2:38 p.m.",
+                                    "time_zone" : "America/Toronto",
+                                    "value" : 1719859132
+                                 },
+                                 "headsign" : "Bloor-Danforth to Kennedy Station",
+                                 "line" : 
+                                 {
+                                    "agencies" : 
+                                    [
+                                       {
+                                          "name" : "TTC",
+                                          "phone" : "1 (416) 393-4636",
+                                          "url" : "https://www.ttc.ca/"
+                                       }
+                                    ],
+                                    "color" : "#009247",
+                                    "name" : "Line 2 Bloor–Danforth",
+                                    "short_name" : "2",
+                                    "text_color" : "#ffffff",
+                                    "vehicle" : 
+                                    {
+                                       "icon" : "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                       "name" : "Subway",
+                                       "type" : "SUBWAY"
+                                    }
+                                 },
+                                 "num_stops" : 14
+                              },
+                              "travel_mode" : "TRANSIT"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "38 m",
+                                 "value" : 38
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 39
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6671711,
+                                 "lng" : -79.40435339999999
+                              },
+                              "html_instructions" : "Walk to Spadina",
+                              "polyline" : 
+                              {
+                                 "points" : "iwoiGhqscNNzA"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.667248,
+                                 "lng" : -79.403893
+                              },
+                              "steps" : 
+                              [
+                                 {
+                                    "distance" : 
+                                    {
+                                       "text" : "38 m",
+                                       "value" : 38
+                                    },
+                                    "duration" : 
+                                    {
+                                       "text" : "1 min",
+                                       "value" : 39
+                                    },
+                                    "end_location" : 
+                                    {
+                                       "lat" : 43.6671711,
+                                       "lng" : -79.40435339999999
+                                    },
+                                    "polyline" : 
+                                    {
+                                       "points" : "iwoiGhqscNNzA"
+                                    },
+                                    "start_location" : 
+                                    {
+                                       "lat" : 43.667248,
+                                       "lng" : -79.403893
+                                    },
+                                    "travel_mode" : "WALKING"
+                                 }
+                              ],
+                              "travel_mode" : "WALKING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "3.8 km",
+                                 "value" : 3833
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "10 mins",
+                                 "value" : 613
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6452417,
+                                 "lng" : -79.3806321
+                              },
+                              "html_instructions" : "Subway towards Yonge-University to Finch Station",
+                              "polyline" : 
+                              {
+                                 "points" : "yvoiGdtscNuAw@Pq@@yAIkAIaAI}@MiAgA_Jy@sGe@}DCI[_DQmCKyAAaAHaAP}@Vs@b@g@lAw@|As@hAe@bGqBDAhAw@pA}@x@q@x@o@~@o@z@a@|@_@bAWz@S~@Mr@Kd@Ep@?h@A|@ApAA|ASpC{@rBq@pBq@VGdCy@lA_@nA_@xCgA@?dCw@h@SbCu@@ArCaAPGjDgALEnC}@nBo@rDiAlAa@jAa@z@_@jB}@jAs@tBkAxBiAj@Wl@[^U^U~@q@v@q@n@s@n@}@Xo@To@Py@De@Bo@As@Eo@Ku@[gCAClA_@"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6671711,
+                                 "lng" : -79.40435339999999
+                              },
+                              "transit_details" : 
+                              {
+                                 "arrival_stop" : 
+                                 {
+                                    "location" : 
+                                    {
+                                       "lat" : 43.6452417,
+                                       "lng" : -79.3806321
+                                    },
+                                    "name" : "Union"
+                                 },
+                                 "arrival_time" : 
+                                 {
+                                    "text" : "3:16 p.m.",
+                                    "time_zone" : "America/Toronto",
+                                    "value" : 1719861391
+                                 },
+                                 "departure_stop" : 
+                                 {
+                                    "location" : 
+                                    {
+                                       "lat" : 43.6671711,
+                                       "lng" : -79.40435339999999
+                                    },
+                                    "name" : "Spadina"
+                                 },
+                                 "departure_time" : 
+                                 {
+                                    "text" : "3:06 p.m.",
+                                    "time_zone" : "America/Toronto",
+                                    "value" : 1719860778
+                                 },
+                                 "headsign" : "Yonge-University to Finch Station",
+                                 "line" : 
+                                 {
+                                    "agencies" : 
+                                    [
+                                       {
+                                          "name" : "TTC",
+                                          "phone" : "1 (416) 393-4636",
+                                          "url" : "https://www.ttc.ca/"
+                                       }
+                                    ],
+                                    "color" : "#f2bf14",
+                                    "name" : "Line 1 Yonge–University",
+                                    "short_name" : "1",
+                                    "text_color" : "#000000",
+                                    "vehicle" : 
+                                    {
+                                       "icon" : "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+                                       "name" : "Subway",
+                                       "type" : "SUBWAY"
+                                    }
+                                 },
+                                 "num_stops" : 7
+                              },
+                              "travel_mode" : "TRANSIT"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "67 m",
+                                 "value" : 67
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 65
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.64525159999999,
+                                 "lng" : -79.38037539999999
+                              },
+                              "html_instructions" : "Walk to 65 Front St W, Toronto, ON M5J 1E6, Canada",
+                              "polyline" : 
+                              {
+                                 "points" : "wmkiG|_ocNw@{@t@H"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6452417,
+                                 "lng" : -79.3806321
+                              },
+                              "steps" : 
+                              [
+                                 {
+                                    "distance" : 
+                                    {
+                                       "text" : "38 m",
+                                       "value" : 38
+                                    },
+                                    "duration" : 
+                                    {
+                                       "text" : "1 min",
+                                       "value" : 39
+                                    },
+                                    "end_location" : 
+                                    {
+                                       "lat" : 43.645515,
+                                       "lng" : -79.38033299999999
+                                    },
+                                    "html_instructions" : "Take exit \u003cspan class=\"location\"\u003eUnion Station Front Street\u003c/span\u003e",
+                                    "polyline" : 
+                                    {
+                                       "points" : "wmkiG|_ocNw@{@"
+                                    },
+                                    "start_location" : 
+                                    {
+                                       "lat" : 43.6452417,
+                                       "lng" : -79.3806321
+                                    },
+                                    "travel_mode" : "WALKING"
+                                 },
+                                 {
+                                    "distance" : 
+                                    {
+                                       "text" : "29 m",
+                                       "value" : 29
+                                    },
+                                    "duration" : 
+                                    {
+                                       "text" : "1 min",
+                                       "value" : 26
+                                    },
+                                    "end_location" : 
+                                    {
+                                       "lat" : 43.64525159999999,
+                                       "lng" : -79.38037539999999
+                                    },
+                                    "polyline" : 
+                                    {
+                                       "points" : "ookiG`~ncNt@H"
+                                    },
+                                    "start_location" : 
+                                    {
+                                       "lat" : 43.645515,
+                                       "lng" : -79.38033299999999
+                                    },
+                                    "travel_mode" : "WALKING"
+                                 }
+                              ],
+                              "travel_mode" : "WALKING"
+                           }
+                        ],
+                        "traffic_speed_entry" : [],
+                        "via_waypoint" : []
+                     }
+                  ],
+                  "overview_polyline" : 
+                  {
+                     "points" : "e~iiGjgmdNc@CgGsH}LsLgMoLaAoAo@sAk@kAk@uBeAyH}@gH}@oGmAaJe@gEe@uFcAmKqBiNIeAU_By@aGgAeH[qB_AsKYeCg@_CsAeIo@cFu@}EyCoTQmB@}CDmDJiARkAh@yDl@gD`AkE`AoDvDmNPyD@yCDwCCmAEgAK_Ae@uCWy@_@k@}@aBiA{BSo@c@{Cw@eFSkAe@_Be@_Ba@cCeBmMiByM}@}GoC}RmBmNyAiLw@_GcCoQcBkMy@sFoAaK_EcYaBqJmDuToCaRSsBGaBMqDYiLAkB@w@CcAUmCoA}Km@qEu@_Gi@{Eu@yF}A{JsAuGc@iC[eCq@oFi@iEeDiVuDmY]kCa@_Ci@yC_A}DmByOk@aE}@_HoAqKsBoPMeAFCNzAuAw@Pq@@yASmCWgCaCsRi@gE[_DQmCKyAAaAHaAP}@Vs@b@g@lAw@|As@hAe@bGqBnAy@jCoBxB_BxBaA~Bk@rBYvAEfBCpAA|ASdGmBhCy@rEyAhFgBtHaCrIsC`M}DxCcAfD}A`E_CdDaBlAq@~AgAv@q@n@s@n@}@Xo@To@Py@HuAGcBg@}DAClA_@w@{@t@H"
+                  },
+                  "summary" : "",
+                  "warnings" : 
+                  [
+                     "Walking directions are in beta. Use caution – This route may be missing sidewalks or pedestrian paths."
+                  ],
+                  "waypoint_order" : []
+               }
+            ],
+            "status" : "OK"
+         },
+         {
+            "geocoded_waypoints" : 
+            [
+               {
+                  "geocoder_status" : "OK",
+                  "place_id" : "ChIJKQDzOA41K4gRajQDdyzD990",
+                  "types" : 
+                  [
+                     "establishment",
+                     "point_of_interest"
+                  ]
+               },
+               {
+                  "geocoder_status" : "OK",
+                  "place_id" : "ChIJa7dwhhA1K4gRUV9cPcYC64g",
+                  "types" : 
+                  [
+                     "establishment",
+                     "point_of_interest"
+                  ]
+               }
+            ],
+            "routes" : 
+            [
+               {
+                  "bounds" : 
+                  {
+                     "northeast" : 
+                     {
+                        "lat" : 43.645656,
+                        "lng" : -79.37745799999999
+                     },
+                     "southwest" : 
+                     {
+                        "lat" : 43.62928309999999,
+                        "lng" : -79.41557229999999
+                     }
+                  },
+                  "copyrights" : "Map data ©2024 Google",
+                  "legs" : 
+                  [
+                     {
+                        "distance" : 
+                        {
+                           "text" : "4.6 km",
+                           "value" : 4608
+                        },
+                        "duration" : 
+                        {
+                           "text" : "18 mins",
+                           "value" : 1092
+                        },
+                        "end_address" : "909 Lake Shore Blvd W, Toronto, ON M6K 3L3, Canada",
+                        "end_location" : 
+                        {
+                           "lat" : 43.62928309999999,
+                           "lng" : -79.4141095
+                        },
+                        "start_address" : "65 Front St W, Toronto, ON M5J 1E6, Canada",
+                        "start_location" : 
+                        {
+                           "lat" : 43.6453803,
+                           "lng" : -79.38042290000001
+                        },
+                        "steps" : 
+                        [
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.1 km",
+                                 "value" : 116
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 21
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.645656,
+                                 "lng" : -79.37903489999999
+                              },
+                              "html_instructions" : "Head \u003cb\u003eeast\u003c/b\u003e on \u003cb\u003eThe PATH - Union-VIA-GO\u003c/b\u003e toward \u003cb\u003eThe PATH - Union Station\u003c/b\u003e",
+                              "polyline" : 
+                              {
+                                 "points" : "snkiGr~ncNEYGo@S_BK{@Gk@AC"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6453803,
+                                 "lng" : -79.38042290000001
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.4 km",
+                                 "value" : 416
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "2 mins",
+                                 "value" : 142
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6421018,
+                                 "lng" : -79.37745799999999
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eBay St.\u003c/b\u003e",
+                              "maneuver" : "turn-right",
+                              "polyline" : 
+                              {
+                                 "points" : "kpkiG|uncNRG`@ODAFC`@M`@M`@Mb@M`@MTITGJEHANEVILG@?DALGJEDALEFCBC@A?A@ATMDADCDCNEHAHETIHCRGPELE`@Mf@QPG\\M"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.645656,
+                                 "lng" : -79.37903489999999
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.3 km",
+                                 "value" : 289
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 69
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6409995,
+                                 "lng" : -79.380712
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eHarbour St\u003c/b\u003e",
+                              "maneuver" : "turn-right",
+                              "polyline" : 
+                              {
+                                 "points" : "czjiGblncNF\\Rz@l@|Bf@xBXlAJ`@FXRp@H\\Rx@@B@FDV"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6421018,
+                                 "lng" : -79.37745799999999
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.1 km",
+                                 "value" : 130
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "2 mins",
+                                 "value" : 108
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6399592,
+                                 "lng" : -79.3800655
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eYork St\u003c/b\u003e",
+                              "maneuver" : "turn-left",
+                              "polyline" : 
+                              {
+                                 "points" : "gsjiGl`ocNHCNCDCj@QTIH?@?B?LGHEBCHGJIHKJMTY"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6409995,
+                                 "lng" : -79.380712
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "1.3 km",
+                                 "value" : 1339
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "4 mins",
+                                 "value" : 236
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6367527,
+                                 "lng" : -79.39604749999999
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eMartin Goodman Trl\u003c/b\u003e",
+                              "maneuver" : "turn-right",
+                              "polyline" : 
+                              {
+                                 "points" : "wljiGl|ncNLZBL@H@JF`@H|@BXRlBBZ?HD\\Db@D^Fp@Dl@D\\Db@Hv@JdAB^DXFv@LjANvAJlABPRfBP`BBTJ`A\\lCDVLp@Lt@J|@DVBLBLFn@Jl@?@BNDZ?@BPJt@BPBJDVHp@DVZ`CD\\Hf@JPFh@DZN`AJ~@DZJpBBb@PhC?@?@B\\Fr@Hv@@BF^Hb@Jl@Nl@FVDH?@?B@D"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6399592,
+                                 "lng" : -79.3800655
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "9 m",
+                                 "value" : 9
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 2
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6368216,
+                                 "lng" : -79.3960991
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e toward \u003cb\u003eQueens Quay W\u003c/b\u003e",
+                              "maneuver" : "turn-right",
+                              "polyline" : 
+                              {
+                                 "points" : "uxiiGh`rcNEBGD"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6367527,
+                                 "lng" : -79.39604749999999
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.4 km",
+                                 "value" : 449
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "3 mins",
+                                 "value" : 191
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6344967,
+                                 "lng" : -79.4005932
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eQueens Quay W\u003c/b\u003e",
+                              "maneuver" : "turn-left",
+                              "polyline" : 
+                              {
+                                 "points" : "cyiiGr`rcNNh@Pt@DRFXNl@Ph@BHFHHNPVNRDFNRZb@HJLR@BHRFRJV?@HTHX@@?@@LZp@FJFPt@zABH|AlD"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6368216,
+                                 "lng" : -79.3960991
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "3 m",
+                                 "value" : 3
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 1
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.63447499999999,
+                                 "lng" : -79.40057030000001
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eStadium Rd\u003c/b\u003e",
+                              "maneuver" : "turn-left",
+                              "polyline" : 
+                              {
+                                 "points" : "sjiiGt|rcNDC"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6344967,
+                                 "lng" : -79.4005932
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.2 km",
+                                 "value" : 249
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 41
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6352117,
+                                 "lng" : -79.40289629999999
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eMartin Goodman Trl\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eWaterfront Trl\u003c/b\u003e",
+                              "maneuver" : "turn-right",
+                              "polyline" : 
+                              {
+                                 "points" : "mjiiGp|rcNFPDNJZNf@FPBJ@H@F?F?D?FAFAFAFADCJEJCHEDCBKLKHKJMJCBGH]^WVEDCDCDCDCFCDCBCBABEBE@CBA@A@?@A@?D?D?F?L"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.63447499999999,
+                                 "lng" : -79.40057030000001
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "77 m",
+                                 "value" : 77
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 14
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6349332,
+                                 "lng" : -79.40376599999999
+                              },
+                              "html_instructions" : "Slight \u003cb\u003eleft\u003c/b\u003e to stay on \u003cb\u003eMartin Goodman Trl\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eWaterfront Trl\u003c/b\u003e",
+                              "maneuver" : "turn-slight-left",
+                              "polyline" : 
+                              {
+                                 "points" : "aoiiGbkscNBXBPDVFVFTDL@BHTFR"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6352117,
+                                 "lng" : -79.40289629999999
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "76 m",
+                                 "value" : 76
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 14
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6355646,
+                                 "lng" : -79.40340359999999
+                              },
+                              "html_instructions" : "Sharp \u003cb\u003eright\u003c/b\u003e onto \u003cb\u003eRemembrance Dr\u003c/b\u003e",
+                              "maneuver" : "turn-sharp-right",
+                              "polyline" : 
+                              {
+                                 "points" : "imiiGppscNKEUIAAYKMIc@WMI"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6349332,
+                                 "lng" : -79.40376599999999
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.7 km",
+                                 "value" : 706
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "2 mins",
+                                 "value" : 121
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.632303,
+                                 "lng" : -79.4099823
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eMartin Goodman Trl\u003c/b\u003e",
+                              "maneuver" : "turn-left",
+                              "polyline" : 
+                              {
+                                 "points" : "gqiiGfnscNCNA@?H@@?DBJDNBD@D@D@HBh@FhBBpABnAFpADn@R|BFt@Jj@Pt@Pj@JRJRHNFHRXHJFBDDDFN^BBRTPLLFPHRN^Tb@\\fAn@VNLHPLLHt@d@h@`@PJ"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6355646,
+                                 "lng" : -79.40340359999999
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.5 km",
+                                 "value" : 483
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 83
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6309527,
+                                 "lng" : -79.41557229999999
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e to stay on \u003cb\u003eMartin Goodman Trl\u003c/b\u003e",
+                              "maneuver" : "turn-right",
+                              "polyline" : 
+                              {
+                                 "points" : "{|hiGjwtcN?R@RATALALALAL@H?D@J@RFX@FBD@B@DBBBBDBBF?@@DBHBPLl@Nr@v@pD`@pBJf@BHDRBNHd@BRBP@DFd@?BBNBJBF@F@@?@BDBFBF?D@B@F?D@PB\\@J?F?H@J@NBTBV"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.632303,
+                                 "lng" : -79.4099823
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "63 m",
+                                 "value" : 63
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 12
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.6304053,
+                                 "lng" : -79.415385
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e onto \u003cb\u003eRemembrance Dr\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eRestricted usage road\u003c/div\u003e",
+                              "maneuver" : "turn-left",
+                              "polyline" : 
+                              {
+                                 "points" : "mthiGhzucNJETEDCbAU"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6309527,
+                                 "lng" : -79.41557229999999
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "54 m",
+                                 "value" : 54
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 10
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.63050459999999,
+                                 "lng" : -79.41473069999999
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eleft\u003c/b\u003e to stay on \u003cb\u003eRemembrance Dr\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eRestricted usage road\u003c/div\u003e",
+                              "maneuver" : "turn-left",
+                              "polyline" : 
+                              {
+                                 "points" : "aqhiGbyucNAUKaAAUAI?E?C"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.6304053,
+                                 "lng" : -79.415385
+                              },
+                              "travel_mode" : "BICYCLING"
+                           },
+                           {
+                              "distance" : 
+                              {
+                                 "text" : "0.1 km",
+                                 "value" : 149
+                              },
+                              "duration" : 
+                              {
+                                 "text" : "1 min",
+                                 "value" : 27
+                              },
+                              "end_location" : 
+                              {
+                                 "lat" : 43.62928309999999,
+                                 "lng" : -79.4141095
+                              },
+                              "html_instructions" : "Turn \u003cb\u003eright\u003c/b\u003e\u003cdiv style=\"font-size:0.9em\"\u003eRestricted usage road\u003c/div\u003e\u003cdiv style=\"font-size:0.9em\"\u003eDestination will be on the right\u003c/div\u003e",
+                              "maneuver" : "turn-right",
+                              "polyline" : 
+                              {
+                                 "points" : "sqhiG`uucNJIDEDEHMDEHKDCFCVIl@Qh@ONGHEFEDAB?BAD?D@B@B@"
+                              },
+                              "start_location" : 
+                              {
+                                 "lat" : 43.63050459999999,
+                                 "lng" : -79.41473069999999
+                              },
+                              "travel_mode" : "BICYCLING"
+                           }
+                        ],
+                        "traffic_speed_entry" : [],
+                        "via_waypoint" : []
+                     }
+                  ],
+                  "overview_polyline" : 
+                  {
+                     "points" : "snkiGr~ncNm@eFIo@t@WpAa@|Bs@z@Ul@S^OZO\\Sd@O|@[hBk@n@UZxAzBfJx@bDBJDVHCTG`A[J?PGb@[TYTYLZDVHl@`@dEh@dGjAvLt@hHNvAb@dDl@|DZxB\\hCdAtHJPFh@T|APzANtCPlCVlCPbAZzAL`@?D@DEBGDNh@VhAVfATr@PXv@fAt@fA\\`ATr@@Lb@|@~CdHDCFPPj@\\nA@\\G\\Sf@_B`Be@h@OVYVATBf@Hh@V~@Ph@a@OmAo@MICNAJJb@HZRtHFpAXlDR`Bb@`Bh@`A\\d@LHTf@VXdAn@bAr@~A~@bBfAz@l@@f@G~@@h@Hl@DLJPJRd@|BhBtIV|AL`ALj@HPFXJnBFl@`@KhAYMwACi@PONSNQLG~Bs@ZMR@B@"
+                  },
+                  "summary" : "Martin Goodman Trl",
+                  "warnings" : 
+                  [
+                     "Bicycling directions are in beta. Use caution – This route may contain streets that aren't suited for bicycling."
+                  ],
+                  "waypoint_order" : []
+               }
+            ],
+            "status" : "OK"
+         }
+    ]
+}
