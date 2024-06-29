@@ -15,7 +15,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <div style={{display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: '972px'}}>
+        <div className={styles.panelContainer}>
           <RouteBuilder />
           <RouteOverview />
         </div>
