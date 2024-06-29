@@ -12,7 +12,10 @@
       "text": "36 mins",
       "value": 2160
     },
-    "eta": 1719858960,
+    "eta": {
+      "text": "2:36 PM",
+      "value": 1719858960
+    },
     "instructions": [
       {
         "description": "Head <b>southeast</b> on <b>St Barbara Blvd</b> toward <b>Derrydale Dr</b>",
@@ -139,7 +142,10 @@
       "text": "39 mins",
       "value": 2340
     },
-    "eta": 1719861480,
+    "eta": {
+      "text": "3:18 PM",
+      "value": 1719861480
+    },
     "instructions": [
       {
         "mode": "transit",
@@ -248,7 +254,10 @@
       "text": "18 mins",
       "value": 1140
     },
-    "eta": 1719862620,
+    "eta": {
+      "text": "3:37 PM",
+      "value": 1719862620
+    },
     "instructions": [
       {
         "description": "Head <b>east</b> on <b>The PATH - Union-VIA-GO</b> toward <b>The PATH - Union Station</b>",
@@ -441,7 +450,10 @@
       "text": "21 mins",
       "value": 1260
     },
-    "eta": 1719863880,
+    "eta": {
+      "text": "3:58 PM",
+      "value": 1719863880
+    },
     "instructions": [
       {
         "description": "Head <b>north</b> toward <b>Remembrance Dr</b><div style=\"font-size:0.9em\">Restricted usage road</div>",
