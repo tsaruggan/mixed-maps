@@ -38,20 +38,24 @@ class RouteOverview extends Component {
             <div className={styles.routeOverviewContainer}>
                 <div className={styles.routeDetailsContainer}>
                     <div className={styles.routeDetailsTitleContainer}>
-                        <p>ETA 2:00 PM – Jun 23, 2024</p>
-                        <p>1 hr 30 min commute</p>
+                        <p>ETA 3:58 PM – Jun 23, 2024</p>
+                        <p>1 hr 58 min commute</p>
                     </div>
-                    
+
                     {this.props.directions.map((direction, index) => (
                         <RouteDirectionsBlock
-                            key={index} 
+                            key={index}
+                            travelMode={direction.travelMode}
                             title={direction.title}
                             eta={direction.eta.text}
                             duration={direction.duration.text}
                             detail={direction.distance.text}
                             color={travelModes.find(mode => mode.name === direction.travelMode).color}
+                            instructions={direction.instructions}
+                            startAddress={direction.startAddress}
+                            endAddress={direction.endAddress}
                         />
-                ))}
+                    ))}
                 </div>
             </div>
         );
@@ -60,17 +64,67 @@ class RouteOverview extends Component {
 
 export default RouteOverview;
 
-function RouteDirectionsBlock(props) {
+function RouteDirectionsBlock({ travelMode, title, eta, duration, detail, color, instructions, startAddress, endAddress }) {
     return (
-        <div className={styles.routeDirectionsBlock} style={{backgroundColor: props.color}}>
-            <div>
-                <p style={{fontWeight: '700'}}>{props.title}</p>
-                <p>ETA {props.eta}</p>
+        <div className={styles.routeDirectionsBlock} style={{ backgroundColor: color }}>
+            <div className={styles.routeDirectionsBlockTitle}>
+                <div>
+                    <p style={{ fontWeight: '700' }}>{title}</p>
+                    <p>ETA {eta}</p>
+                </div>
+                <div style={{ textAlign: 'end' }}>
+                    <p style={{ fontWeight: '700' }}>{duration}</p>
+                    <p>{detail}</p>
+                </div>
             </div>
-            <div style={{textAlign: 'end'}}>
-                <p style={{fontWeight: '700'}}>{props.duration}</p>
-                <p>{props.detail}</p>
-            </div>
+            <DetailedInstructions
+                travelMode={travelMode}
+                instructions={instructions}
+                startAddress={startAddress}
+                endAddress={endAddress}
+            />
         </div>
     );
+}
+
+function DetailedInstructions({ travelMode, instructions, startAddress, endAddress }) {
+
+    const renderInstructions = () => {
+        return (
+            <div className={styles.routeDirectionsInstructionsContainer}>
+                <div style={{ fontWeight: '700', marginBottom: '6px' }}>
+                    {startAddress}
+                </div>
+
+                {instructions.map((instruction, index) => (
+                    <div key={index}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '6px' }}>
+                            <div
+                                className={styles.instructionText}
+                                dangerouslySetInnerHTML={{ __html: instruction.description }}
+                                style={{ maxWidth: '264px'}}
+                            />
+                            <div className={styles.durationDistance}>
+                                <span>{instruction.duration.text}</span>
+                                <span style={{marginLeft: '2px'}}>{`(${instruction.distance.text})`}</span>
+                            </div>
+
+                        </div>
+                    </div>
+                ))}
+
+                <div style={{ fontWeight: '700', marginTop: '4px' }}>
+                    {endAddress}
+                </div>
+            </div>
+        );
+    };
+
+
+
+    if (travelMode === 'transit') {
+        return (<></>);
+    } else {
+        return renderInstructions();
+    }
 }

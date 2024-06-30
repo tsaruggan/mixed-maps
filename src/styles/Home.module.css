@@ -22,11 +22,20 @@
   .panelContainer {
     flex-direction: column;
     gap: 36px;
+    width: 100%;
+    max-width: 468px;
   }
 
   .routeBuilder, .routeOverviewContainer {
     width: 100%;
   }
+
+  .main {
+    padding-top: 36px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
 }
 
 .routeBuildingBlock {
@@ -109,6 +118,7 @@
   background-color: rgba(166, 166, 166, 0.15);
   padding: 16px;
   border-radius: 4px;
+  width: 100%;
 }
 
 .routeDetailsTitleContainer{
@@ -119,11 +129,50 @@
 
 .routeDirectionsBlock {
   border-radius: 4px;
-  display: flex;
+  display: column;
   justify-content: space-between;
   padding: 8px;
 }
 
 .routeDetailsContainer > .routeDirectionsBlock {
   margin-top: 12px;
+}
+
+.routeDirectionsBlockTitle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.routeDirectionsInstructionsContainer {
+  /* Reset font sizes and weights */
+  /* font-size: inherit;
+  font-weight: inherit; */
+  margin-top: 6px;
+}
+
+/* Override specific elements */
+.instructionText b,
+.instructionText div {
+  /* Ensure no changes to font size or weight */
+  font-size: inherit !important;
+  font-weight: inherit !important;
+}
+
+.durationDistance {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.durationDistance span {
+  white-space: nowrap; /* Prevents text from wrapping prematurely */
+}
+
+@media (max-width: 500px) {
+  .durationDistance {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
