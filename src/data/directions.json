@@ -173,7 +173,7 @@
         "transitDetails": {
           "color": "#009247",
           "shortName": "2",
-          "numStops": 0,
+          "numStops": 14,
           "vehicle": {
             "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
             "name": "Subway",
@@ -219,24 +219,13 @@
         "transitDetails": {
           "color": "#f2bf14",
           "shortName": "1",
-          "numStops": 0,
+          "numStops": 7,
           "vehicle": {
             "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/subway2.png",
+            "localIcon": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png",
             "name": "Subway",
             "type": "SUBWAY"
           }
-        }
-      },
-      {
-        "mode": "walking",
-        "description": "Walk to 65 Front St W, Toronto, ON M5J 1E6, Canada",
-        "distance": {
-          "text": "67 m",
-          "value": 67
-        },
-        "duration": {
-          "text": "1 min",
-          "value": 65
         }
       }
     ]

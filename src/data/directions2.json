@@ -1,0 +1,534 @@
+[
+  {
+    "travelMode": "transit",
+    "title": "Bus to Malton GO Station, Train to Union",
+    "startAddress": "7120 St Barbara Blvd, Mississauga, ON L5W 0C9, Canada",
+    "endAddress": "65 Front St W, Toronto, ON M5J 1E6, Canada",
+    "distance": {
+      "text": "34.2 km",
+      "value": 34191
+    },
+    "duration": {
+      "text": "1 hour 13 mins",
+      "value": 4440
+    },
+    "eta": {
+      "text": "4:01 PM",
+      "value": 1719518460
+    },
+    "instructions": [
+      {
+        "mode": "walking",
+        "description": "Walk to Derry Rd At Saint Barbara Blvd",
+        "distance": {
+          "text": "0.4 km",
+          "value": 411
+        },
+        "duration": {
+          "text": "6 mins",
+          "value": 360
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "18 E Mclaughlin-Derry To Westwood",
+        "distance": {
+          "text": "9.6 km",
+          "value": 9632
+        },
+        "duration": {
+          "text": "29 mins",
+          "value": 1740
+        },
+        "arrivalStop": "Malton GO Station",
+        "departureStop": "Derry Rd @ Saint Barbara Blvd",
+        "arrivalTime": {
+          "text": "3:22 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719516120
+        },
+        "departureTime": {
+          "text": "2:53 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719514380
+        },
+        "transitDetails": {
+          "color": "#d33517",
+          "shortName": "18",
+          "numStops": 17,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "name": "Bus",
+            "type": "BUS"
+          }
+        }
+      },
+      {
+        "mode": "walking",
+        "description": "Walk to Malton",
+        "distance": {
+          "text": "0.2 km",
+          "value": 228
+        },
+        "duration": {
+          "text": "3 mins",
+          "value": 189
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "Malton GO 15:30 - Union Station 15:59",
+        "distance": {
+          "text": "23.9 km",
+          "value": 23853
+        },
+        "duration": {
+          "text": "29 mins",
+          "value": 1740
+        },
+        "arrivalStop": "Union",
+        "departureStop": "Malton",
+        "arrivalTime": {
+          "text": "3:59 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719518340
+        },
+        "departureTime": {
+          "text": "3:30 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719516600
+        },
+        "transitDetails": {
+          "color": "#00853e",
+          "shortName": "KI",
+          "numStops": 4,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/rail2.png",
+            "name": "Train",
+            "type": "HEAVY_RAIL",
+            "localIcon": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+          }
+        }
+      },
+      {
+        "mode": "walking",
+        "description": "Walk to 65 Front St W, Toronto, ON M5J 1E6, Canada",
+        "distance": {
+          "text": "67 m",
+          "value": 67
+        },
+        "duration": {
+          "text": "1 min",
+          "value": 65
+        }
+      }
+    ]
+  },
+  {
+    "travelMode": "transit",
+    "title": "Bus to Courtneypark Dr @ Hurontario St",
+    "startAddress": "7120 St Barbara Blvd, Mississauga, ON L5W 0C9, Canada",
+    "endAddress": "40 Annagem Blvd, Mississauga, ON L5T 2Y3, Canada",
+    "distance": {
+      "text": "4.3 km",
+      "value": 4343
+    },
+    "duration": {
+      "text": "28 mins",
+      "value": 1740
+    },
+    "eta": {
+      "text": "5:17 PM",
+      "value": 1719523020
+    },
+    "instructions": [
+      {
+        "mode": "walking",
+        "description": "Walk to Mclaughlin Rd At Kaiser Dr",
+        "distance": {
+          "text": "0.5 km",
+          "value": 473
+        },
+        "duration": {
+          "text": "7 mins",
+          "value": 402
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "66 S Mclaughlin To City Centre",
+        "distance": {
+          "text": "1.9 km",
+          "value": 1936
+        },
+        "duration": {
+          "text": "5 mins",
+          "value": 300
+        },
+        "arrivalStop": "Mclaughlin Rd @ Courtneypark Dr",
+        "departureStop": "Mclaughlin Rd @ Kaiser Dr",
+        "arrivalTime": {
+          "text": "5:00 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719522000
+        },
+        "departureTime": {
+          "text": "4:55 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719521700
+        },
+        "transitDetails": {
+          "color": "#d33517",
+          "shortName": "66",
+          "numStops": 5,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "name": "Bus",
+            "type": "BUS"
+          }
+        }
+      },
+      {
+        "mode": "walking",
+        "description": "Walk to Courtneypark Dr At Mclaughlin Rd",
+        "distance": {
+          "text": "51 m",
+          "value": 51
+        },
+        "duration": {
+          "text": "1 min",
+          "value": 43
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "57 E Courtneypark To Renforth Station",
+        "distance": {
+          "text": "1.4 km",
+          "value": 1436
+        },
+        "duration": {
+          "text": "5 mins",
+          "value": 300
+        },
+        "arrivalStop": "Courtneypark Dr @ Hurontario St",
+        "departureStop": "Courtneypark Dr @ Mclaughlin Rd",
+        "arrivalTime": {
+          "text": "5:09 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719522556
+        },
+        "departureTime": {
+          "text": "5:05 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719522315
+        },
+        "transitDetails": {
+          "color": "#d33517",
+          "shortName": "57",
+          "numStops": 3,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "name": "Bus",
+            "type": "BUS"
+          }
+        }
+      },
+      {
+        "mode": "walking",
+        "description": "Walk to 40 Annagem Blvd, Mississauga, ON L5T 2Y3, Canada",
+        "distance": {
+          "text": "0.4 km",
+          "value": 447
+        },
+        "duration": {
+          "text": "7 mins",
+          "value": 414
+        }
+      }
+    ]
+  },
+  {
+    "travelMode": "transit",
+    "title": "Bus to Lakeshore Rd West Of Lorne Park Rd",
+    "startAddress": "7120 St Barbara Blvd, Mississauga, ON L5W 0C9, Canada",
+    "endAddress": "1180 Lakeshore Rd W, Mississauga, ON L5H 1A1, Canada",
+    "distance": {
+      "text": "21.8 km",
+      "value": 21777
+    },
+    "duration": {
+      "text": "1 hour 53 mins",
+      "value": 6780
+    },
+    "eta": {
+      "text": "7:07 PM",
+      "value": 1719529620
+    },
+    "instructions": [
+      {
+        "mode": "walking",
+        "description": "Walk to Mclaughlin Rd At Kaiser Dr",
+        "distance": {
+          "text": "0.5 km",
+          "value": 473
+        },
+        "duration": {
+          "text": "7 mins",
+          "value": 402
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "66 S Mclaughlin To City Centre",
+        "distance": {
+          "text": "8.7 km",
+          "value": 8675
+        },
+        "duration": {
+          "text": "30 mins",
+          "value": 1780
+        },
+        "arrivalStop": "City Centre Transit Terminal Platform F",
+        "departureStop": "Mclaughlin Rd @ Kaiser Dr",
+        "arrivalTime": {
+          "text": "5:50 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719525040
+        },
+        "departureTime": {
+          "text": "5:21 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719523260
+        },
+        "transitDetails": {
+          "color": "#d33517",
+          "shortName": "66",
+          "numStops": 25,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "name": "Bus",
+            "type": "BUS"
+          }
+        }
+      },
+      {
+        "mode": "walking",
+        "description": "Walk to City Centre Transit Terminal Platform D",
+        "distance": {
+          "text": "56 m",
+          "value": 56
+        },
+        "duration": {
+          "text": "1 min",
+          "value": 56
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "2 S Hurontario To Port Credit Go",
+        "distance": {
+          "text": "8.1 km",
+          "value": 8100
+        },
+        "duration": {
+          "text": "34 mins",
+          "value": 2040
+        },
+        "arrivalStop": "Ann St @ Park St",
+        "departureStop": "City Centre Transit Terminal Platform D",
+        "arrivalTime": {
+          "text": "6:37 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719527820
+        },
+        "departureTime": {
+          "text": "6:03 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719525780
+        },
+        "transitDetails": {
+          "color": "#d33517",
+          "shortName": "2",
+          "numStops": 28,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "name": "Bus",
+            "type": "BUS"
+          }
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "23 W Lakeshore To Clarkson Go",
+        "distance": {
+          "text": "4.0 km",
+          "value": 4045
+        },
+        "duration": {
+          "text": "14 mins",
+          "value": 840
+        },
+        "arrivalStop": "Lakeshore Rd West Of Lorne Park Rd",
+        "departureStop": "Ann St @ Park St",
+        "arrivalTime": {
+          "text": "7:01 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719529260
+        },
+        "departureTime": {
+          "text": "6:47 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719528420
+        },
+        "transitDetails": {
+          "color": "#d33517",
+          "shortName": "23",
+          "numStops": 17,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "name": "Bus",
+            "type": "BUS"
+          }
+        }
+      },
+      {
+        "mode": "walking",
+        "description": "Walk to 1180 Lakeshore Rd W, Mississauga, ON L5H 1A1, Canada",
+        "distance": {
+          "text": "0.4 km",
+          "value": 428
+        },
+        "duration": {
+          "text": "6 mins",
+          "value": 354
+        }
+      }
+    ]
+  },
+  {
+    "travelMode": "transit",
+    "title": "Bus to Main St. W. @ Paisley Ave. S.",
+    "startAddress": "7120 St Barbara Blvd, Mississauga, ON L5W 0C9, Canada",
+    "endAddress": "1024 King St W, Hamilton, ON L8S 1L5, Canada",
+    "distance": {
+      "text": "61.7 km",
+      "value": 61729
+    },
+    "duration": {
+      "text": "1 hour 44 mins",
+      "value": 6240
+    },
+    "eta": {
+      "text": "6:42 PM",
+      "value": 1719528120
+    },
+    "instructions": [
+      {
+        "mode": "walking",
+        "description": "Walk to Mclaughlin Rd At Kaiser Dr",
+        "distance": {
+          "text": "0.5 km",
+          "value": 473
+        },
+        "duration": {
+          "text": "7 mins",
+          "value": 402
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "66 S Mclaughlin To City Centre",
+        "distance": {
+          "text": "8.6 km",
+          "value": 8590
+        },
+        "duration": {
+          "text": "28 mins",
+          "value": 1680
+        },
+        "arrivalStop": "City Centre Transit Terminal Drop Off",
+        "departureStop": "Mclaughlin Rd @ Kaiser Dr",
+        "arrivalTime": {
+          "text": "5:32 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719523920
+        },
+        "departureTime": {
+          "text": "5:04 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719522240
+        },
+        "transitDetails": {
+          "color": "#d33517",
+          "shortName": "66",
+          "numStops": 24,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "name": "Bus",
+            "type": "BUS"
+          }
+        }
+      },
+      {
+        "mode": "walking",
+        "description": "Walk to Square One, Mississauga",
+        "distance": {
+          "text": "0.2 km",
+          "value": 231
+        },
+        "duration": {
+          "text": "3 mins",
+          "value": 198
+        }
+      },
+      {
+        "mode": "transit",
+        "description": "40 - Hamilton GO",
+        "distance": {
+          "text": "51.8 km",
+          "value": 51827
+        },
+        "duration": {
+          "text": "48 mins",
+          "value": 2880
+        },
+        "arrivalStop": "Main St. W. @ Paisley Ave. S.",
+        "departureStop": "Square One, Mississauga",
+        "arrivalTime": {
+          "text": "6:32 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719527545
+        },
+        "departureTime": {
+          "text": "5:43 p.m.",
+          "time_zone": "America/Toronto",
+          "value": 1719524590
+        },
+        "transitDetails": {
+          "color": "#a11984",
+          "shortName": "40",
+          "numStops": 3,
+          "vehicle": {
+            "icon": "//maps.gstatic.com/mapfiles/transit/iw2/6/bus2.png",
+            "name": "Bus",
+            "type": "BUS",
+            "localIcon": "//maps.gstatic.com/mapfiles/transit/iw2/6/ca-toronto-go-transit.png"
+          }
+        }
+      },
+      {
+        "mode": "walking",
+        "description": "Walk to 1024 King St W, Hamilton, ON L8S 1L5, Canada",
+        "distance": {
+          "text": "0.6 km",
+          "value": 608
+        },
+        "duration": {
+          "text": "9 mins",
+          "value": 521
+        }
+      }
+    ]
+  }
+]
