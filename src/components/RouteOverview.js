@@ -45,14 +45,44 @@ class RouteOverview extends Component {
 export default RouteOverview;
 
 function RouteDirectionsBlock({ travelMode, title, eta, duration, distance, color, instructions, startAddress, endAddress }) {
+    
     const renderTransitCommuteIconPreview = () => {
-        // I'LL  BE BACK AFTER NY
-        <span>
-            {instructions.map((instruction, index) => (
-                {}
-            ))}
-        </span>
-    }
+        const walkingThresholdDuration = 300;
+        return (
+            <span className={styles.transitCommuteIconPreview}>
+                {instructions.map((instruction, index) => {
+                    if (instruction.mode === 'walking' && instruction.duration.value < walkingThresholdDuration) {
+                        return null;
+                    }
+
+                    return (
+                        <React.Fragment key={index}>
+                            {instruction.mode === 'walking' ? (
+                                <img src={walkingIconSrc} className={styles.transitCommuteIcon} />
+                            ) : (
+                                <>
+                                    <img src={instruction.transitDetails.vehicle.localIcon} className={styles.transitCommuteIcon} />
+                                    <img src={instruction.transitDetails.vehicle.icon} className={styles.transitCommuteIcon} />
+                                </>
+                            )}
+                            {index < instructions.length-1 && (
+                                <>
+                                    {index === instructions.length-2 && instructions[index+1].mode === 'walking' && instructions[index+1].duration.value < walkingThresholdDuration ? (
+                                        <></>
+                                    ) : (
+                                        <span style={{ height: '100%', width: 'auto', display: 'flex', alignItems: 'center' }}>{">"}</span>
+                                    )}
+                                </>
+                            )}
+
+                        </React.Fragment>
+                    );
+                })}
+            </span>
+        );
+    };
+
+
 
     return (
         <div className={styles.routeDirectionsBlock} style={{ backgroundColor: color }}>
@@ -61,10 +91,10 @@ function RouteDirectionsBlock({ travelMode, title, eta, duration, distance, colo
                     <p style={{ fontWeight: '700' }}>{title}</p>
                     <p>ETA {eta}</p>
                 </div>
-                <div style={{ textAlign: 'end' }}>
+                <div style={{ textAlign: 'end', height: '16px' }}>
                     <p style={{ fontWeight: '700' }}>{duration}</p>
-                    {travelMode == 'transit' ? <p>{distance}</p> : <p>{distance}</p>}
-                    
+                    {travelMode == 'transit' ? renderTransitCommuteIconPreview(instructions) : <p>{distance}</p>}
+
                 </div>
             </div>
             <DetailedInstructions

@@ -82,6 +82,12 @@
   cursor: pointer;
 }
 
+@media (max-width: 424px) {
+  .transportOptionButton {
+    width: 72px;
+  }
+}
+
 .active {
   border: 2px solid #000000;
   font-weight: 700;
@@ -175,4 +181,19 @@
     flex-direction: column;
     justify-content: flex-start;
   }
+}
+
+.transitCommuteIconPreview {
+  display: flex;
+  align-items: center;
+  height: 16px;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.transitCommuteIcon {
+  height: 100%;
+  width: auto;
+  /* margin-left: 2px; */
+  /* margin-right: 2px; */
 }
