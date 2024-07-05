@@ -2,49 +2,65 @@ import React, { Component } from 'react';
 import RouteBuildingBlock from './RouteBuildingBlock';
 import styles from "@/styles/Home.module.css";
 
+const defaultMode = "transit"
+
 class RouteBuilder extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            routes: [
-                { startingAddress: '', destinationAddress: '' },
-            ]
+            addresses: ["", ""],
+            modes: [defaultMode]
         };
         this.handleAddressChange = this.handleAddressChange.bind(this);
+        this.handleModeChange = this.handleModeChange.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
+        this.handleRoute = this.handleRoute.bind(this);
     }
 
     handleAddressChange(index, addressType, value) {
-        const newRoutes = [...this.state.routes];
-        newRoutes[index][addressType] = value;
+        const newAddresses = [...this.state.addresses];
 
-        // Propagate changes to subsequent blocks if updating destination address
-        if (addressType === 'destinationAddress' && index < newRoutes.length - 1) {
-            newRoutes[index + 1].startingAddress = value;
+        if (addressType == "starting") {
+            newAddresses[index] = value;
+        } else if (addressType == "destination") {
+            newAddresses[index+1] = value;
         }
+        this.setState({ addresses: newAddresses });
+    }
 
-        this.setState({ routes: newRoutes });
+    handleModeChange(index, value) {
+        const newModes = [...this.state.modes];
+        newModes[index] = value
+        this.setState({ modes: newModes });
     }
 
     handleAdd() {
-        const lastRoute = this.state.routes.at(-1);
-        const newRoute = { startingAddress: lastRoute.destinationAddress, destinationAddress: '' }
-        const newRoutes = [...this.state.routes];
-        newRoutes.push(newRoute);
-        this.setState({ routes: newRoutes });
+        const newAddresses = [...this.state.addresses];
+        newAddresses.push("");
+
+        const newModes = [...this.state.modes];
+        newModes.push(defaultMode);
+
+        this.setState({ addresses: newAddresses, modes: newModes });
+    }
+
+    handleRoute() {
+        this.props.onRoute(this.state.addresses, this.state.modes);
     }
 
     render() {
-        const addDisabled = this.state.routes.at(-1).startingAddress == '' || this.state.routes.at(-1).destinationAddress == '';
+        const addDisabled = this.state.addresses.at(-1) == "" || this.state.addresses.at(-2) == "";
         return (
             <div className={styles.routeBuilder}>
-                {this.state.routes.map((route, index) => (
+                {this.state.addresses.slice(0, -1).map((_, index) => (
                     <RouteBuildingBlock
                         key={index}
                         index={index}
-                        startingAddress={route.startingAddress}
-                        destinationAddress={route.destinationAddress}
+                        startingAddress={this.state.addresses[index]}
+                        destinationAddress={this.state.addresses[index+1]}
+                        mode={this.state.modes[index]}
                         onAddressChange={this.handleAddressChange}
+                        onModeChange={this.handleModeChange}
                     />
                 ))}
                 <div style={{display: 'flex', justifyContent: 'end', width: '100%'}}>
@@ -56,6 +72,7 @@ class RouteBuilder extends Component {
                     />
                     <ActionButton 
                         text={"Route"} 
+                        handleOnClick={this.handleRoute}
                         backgroundColor={"rgba(121, 196, 229, 1)"}
                         disabled={addDisabled}
                     />

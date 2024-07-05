@@ -9,23 +9,19 @@ import RouteOverview from "@/components/RouteOverview";
 
 import { useState, useEffect } from 'react';
 
+import { fetchRoute } from "@/utils/requests";
+
 export default function Home() {
-  const [directions, setDirections] = useState([]);
+  const [route, setRoute] = useState({ directions: null, duration: null, eta: null });
 
-  const fetchDirections = async () => {
+  const onRoute = async (addresses, modes) => {
     try {
-      const response = await fetch('/api/directions');
-      const directions = await response.json();
-      console.log(directions);
-      setDirections(directions);
+      const newRoute = await fetchRoute(addresses, modes);
+      setRoute(newRoute);
     } catch (error) {
-      console.error('Error fetching directions:', error);
-    }
-  };
-
-  useEffect(() => {
-    fetchDirections();
-  }, []);
+      console.error("Error in fetching route:", error);
+    } 
+  }
 
   return (
     <>
@@ -35,8 +31,8 @@ export default function Home() {
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.panelContainer}>
-          <RouteBuilder />
-          <RouteOverview directions={directions}/>
+          <RouteBuilder onRoute={onRoute} />
+          <RouteOverview route={route} />
         </div>
       </main>
     </>

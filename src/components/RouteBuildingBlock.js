@@ -1,28 +1,31 @@
-import React, { Component } from 'react';
+import React, { Component, useRef, useEffect } from 'react';
 import styles from "@/styles/Home.module.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import AddressTextField from './AddressTextField';
 
-const transportOptions = [
-    { name: "Driving", color: "38, 70, 83" },
-    { name: "Transit", color: "42, 157, 143" },
-    { name: "Biking", color: "233, 196, 106" },
-    { name: "Walking", color: "244, 162, 97" }
+
+const modes = [
+    { name: "driving", color: "38, 70, 83", title: "Driving" },
+    { name: "transit", color: "42, 157, 143", title: "Transit" },
+    { name: "bicycling", color: "233, 196, 106", title: "Biking" },
+    { name: "walking", color: "244, 162, 97", title: "Walking" }
 ];
 
 class RouteBuildingBlock extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            selectedTransportOption: "Driving"
-        };
     }
+    
+    handleAddressTextFieldChange(addressType, value) {
+        this.props.onAddressChange(this.props.index, addressType, value);
+    };
 
-    handleAddressTextFieldChange(addressType, event) {
-        this.props.onAddressChange(this.props.index, addressType, event.target.value);
+    handleModeOptionChange(mode) {
+        this.props.onModeChange(this.props.index, mode);
     };
 
     render() {
-        const backgroundColor = `rgba(${transportOptions.find(option => option.name == this.state.selectedTransportOption).color}, 0.25)`;
+        const backgroundColor = `rgba(${modes.find(option => option.name == this.props.mode).color}, 0.25)`;
         return (
             <div className={styles.routeBuildingBlock} style={{ backgroundColor: backgroundColor }}>
                 <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}>
@@ -32,26 +35,26 @@ class RouteBuildingBlock extends Component {
                             name="starting"
                             placeholder="Choose starting point..."
                             value={this.props.startingAddress}
-                            onChange={(e) => this.handleAddressTextFieldChange('startingAddress', e)}
+                            onChange={(newValue) => this.handleAddressTextFieldChange('starting', newValue)}
                             disabled={this.props.index != 0}
                         />
                         <AddressTextField
                             name="destination"
                             placeholder="Choose destination..."
                             value={this.props.destinationAddress}
-                            onChange={(e) => this.handleAddressTextFieldChange('destinationAddress', e)}
+                            onChange={(newValue) => this.handleAddressTextFieldChange('destination', newValue)}
                             disabled={false}
                         />
                     </div>
                 </div>
 
                 <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', paddingTop: '16px' }}>
-                    {transportOptions.map((option) => (
-                        <TransportOptionButton
+                    {modes.map((option) => (
+                        <ModeOptionButton
                             key={option.name}
-                            transportOption={option}
-                            isActive={option.name == this.state.selectedTransportOption}
-                            handleOnClick={(e) => this.setState({ selectedTransportOption: option.name })}
+                            mode={option}
+                            isActive={option.name == this.props.mode}
+                            handleOnClick={(e) => this.handleModeOptionChange(option.name)}
                         />
                     ))}
                 </div>
@@ -62,32 +65,18 @@ class RouteBuildingBlock extends Component {
 
 export default RouteBuildingBlock;
 
-function AddressTextField({ name, placeholder, value, onChange, disabled }) {
-    return (
-        <input
-            type="text"
-            className={styles.addressTextField}
-            name={name}
-            placeholder={placeholder}
-            value={value}
-            onChange={onChange}
-            disabled={disabled}
-        />
-    );
-}
-
-function TransportOptionButton({ transportOption, isActive, handleOnClick }) {
+function ModeOptionButton({ mode, isActive, handleOnClick }) {
     const alpha = isActive ? 0.6 : 0.2;
-    const backgroundColor = `rgba(${transportOption.color}, ${alpha})`
+    const backgroundColor = `rgba(${mode.color}, ${alpha})`
     const buttonStyle = {
         backgroundColor: backgroundColor,
     };
     return (
         <button
-            className={`${styles.transportOptionButton} ${isActive ? styles.active : ''}`}
+            className={`${styles.modeOptionButton} ${isActive ? styles.active : ''}`}
             style={buttonStyle}
             onClick={handleOnClick}>
-            {transportOption.name}
+            {mode.title}
         </button>
     );
 }
