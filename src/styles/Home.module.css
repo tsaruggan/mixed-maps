@@ -133,17 +133,15 @@
   font-weight: 700;
 }
 
+.routeDirectionsBlockTitle:hover {
+  cursor: pointer;
+}
+
 .routeDirectionsBlock {
   border-radius: 4px;
   display: column;
   justify-content: space-between;
   padding: 8px;
-}
-
-
-
-.routeDirectionsBlock:hover {
-  cursor: pointer;
 }
 
 .routeDetailsContainer > .routeDirectionsBlock {
