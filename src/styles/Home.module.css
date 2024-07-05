@@ -140,6 +140,12 @@
   padding: 8px;
 }
 
+
+
+.routeDirectionsBlock:hover {
+  cursor: pointer;
+}
+
 .routeDetailsContainer > .routeDirectionsBlock {
   margin-top: 12px;
 }
@@ -147,6 +153,7 @@
 .routeDirectionsBlockTitle {
   display: flex;
   justify-content: space-between;
+  line-height: 16px;
 }
 
 .routeDirectionsInstructionsContainer {

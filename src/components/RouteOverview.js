@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styles from "@/styles/Home.module.css";
-
-
+import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 
 const travelModes = [
     { name: "driving", color: "rgba(38, 70, 83, 0.25)" },
@@ -25,6 +24,7 @@ class RouteOverview extends Component {
                     {this.props.directions.map((direction, index) => (
                         <RouteDirectionsBlock
                             key={index}
+                            index={index}
                             travelMode={direction.travelMode}
                             title={direction.title}
                             eta={direction.eta.text}
@@ -44,8 +44,13 @@ class RouteOverview extends Component {
 
 export default RouteOverview;
 
-function RouteDirectionsBlock({ travelMode, title, eta, duration, distance, color, instructions, startAddress, endAddress }) {
-    
+function RouteDirectionsBlock({ index, travelMode, title, eta, duration, distance, color, instructions, startAddress, endAddress }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleExpand = () => {
+        setIsExpanded(!isExpanded);
+    };
+
     const renderTransitCommuteIconPreview = () => {
         const walkingThresholdDuration = 300;
         return (
@@ -65,9 +70,9 @@ function RouteDirectionsBlock({ travelMode, title, eta, duration, distance, colo
                                     <img src={instruction.transitDetails.vehicle.icon} className={styles.transitCommuteIcon} />
                                 </>
                             )}
-                            {index < instructions.length-1 && (
+                            {index < instructions.length - 1 && (
                                 <>
-                                    {index === instructions.length-2 && instructions[index+1].mode === 'walking' && instructions[index+1].duration.value < walkingThresholdDuration ? (
+                                    {index === instructions.length - 2 && instructions[index + 1].mode === 'walking' && instructions[index + 1].duration.value < walkingThresholdDuration ? (
                                         <></>
                                     ) : (
                                         <span style={{ height: '100%', width: 'auto', display: 'flex', alignItems: 'center' }}>{">"}</span>
@@ -82,27 +87,31 @@ function RouteDirectionsBlock({ travelMode, title, eta, duration, distance, colo
         );
     };
 
-
-
     return (
-        <div className={styles.routeDirectionsBlock} style={{ backgroundColor: color }}>
-            <div className={styles.routeDirectionsBlockTitle}>
-                <div>
-                    <p style={{ fontWeight: '700' }}>{title}</p>
-                    <p>ETA {eta}</p>
+        <div className={styles.routeDirectionsBlock} style={{ backgroundColor: color }} >
+            <div className={styles.routeDirectionsBlockTitle} onClick={toggleExpand}>
+                <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+                    <NumberedChevron number={index+1} expanded={isExpanded}/>
+                    <div>
+                        <p style={{ fontWeight: '700' }}>{title}</p>
+                        <p>ETA {eta}</p>
+                    </div>
                 </div>
+
                 <div style={{ textAlign: 'end', height: '16px' }}>
                     <p style={{ fontWeight: '700' }}>{duration}</p>
                     {travelMode == 'transit' ? renderTransitCommuteIconPreview(instructions) : <p>{distance}</p>}
 
                 </div>
             </div>
-            <DetailedInstructions
-                travelMode={travelMode}
-                instructions={instructions}
-                startAddress={startAddress}
-                endAddress={endAddress}
-            />
+            {isExpanded && (
+                <DetailedInstructions
+                    travelMode={travelMode}
+                    instructions={instructions}
+                    startAddress={startAddress}
+                    endAddress={endAddress}
+                />
+            )}
         </div>
     );
 }
@@ -237,3 +246,61 @@ function DetailedInstructions({ travelMode, instructions, startAddress, endAddre
 function timeFormat(time) {
     return time.replace('a.m.', 'AM').replace('p.m.', 'PM');
 }
+
+const NumberedChevron = ({ number, expanded }) => {
+    const containerStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        width: '16px',
+        height: '32px',
+        marginRight: '8px',
+        gap: '3px'
+    };
+
+    const numberContainerStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '16px',
+        height: '16px',
+    };
+
+    const numberStyle = {
+        width: '16px', // Reduced width
+        height: '16px', // Reduced height
+        borderRadius: '50%',
+        border: '2px solid black',
+        color: 'black',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '12px', // Adjusted font size
+        fontWeight: '600',
+        backgroundColor: 'transparent',
+    };
+
+    const iconContainerStyle = {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '12px',
+        height: '12px',
+    };
+
+    const iconStyle = {
+        fontSize: '12px',
+        color: 'black',
+    };
+
+    return (
+        <div style={containerStyle}>
+            <div style={numberContainerStyle}>
+                <div style={numberStyle}>{number}</div>
+            </div>
+            <div style={iconContainerStyle}>
+                {expanded ? <FaChevronDown style={iconStyle} /> : <FaChevronRight style={iconStyle} />}
+            </div>
+        </div>
+    );
+};

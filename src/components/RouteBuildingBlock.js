@@ -122,7 +122,7 @@ const NumberedMarker = ({ number }) => {
         alignItems: 'center',
         justifyContent: 'center',
         fontSize: '12px', // Adjusted font size
-        fontWeight: 'bold',
+        fontWeight: '600',
         backgroundColor: 'transparent',
     };
 
