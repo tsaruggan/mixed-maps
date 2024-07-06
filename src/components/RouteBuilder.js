@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RouteBuildingBlock from './RouteBuildingBlock';
+import ActionButton from './ActionButton';
 import styles from "@/styles/Home.module.css";
 
 const defaultMode = "transit"
@@ -63,7 +64,7 @@ class RouteBuilder extends Component {
                         onModeChange={this.handleModeChange}
                     />
                 ))}
-                <div style={{display: 'flex', justifyContent: 'end', width: '100%'}}>
+                <div style={{display: 'flex', justifyContent: 'end', width: '100%', gap: '12px'}}>
                     <ActionButton 
                         text={"Add +"} 
                         handleOnClick={this.handleAdd}
@@ -84,17 +85,3 @@ class RouteBuilder extends Component {
 }
 
 export default RouteBuilder;
-
-
-function ActionButton({ text, handleOnClick, backgroundColor, disabled }) {
-    return (
-        <button 
-            className={styles.actionButton} 
-            style={{ backgroundColor: disabled ? "rgba(166, 166, 166, 0.25)" : backgroundColor }} 
-            onClick={handleOnClick}
-            disabled={disabled}
-        > 
-            {text}
-        </button>
-    );
-}

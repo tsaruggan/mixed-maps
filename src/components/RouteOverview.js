@@ -24,12 +24,12 @@ class RouteOverview extends Component {
             <div className={styles.routeDetailsContainer}>
                 <div className={styles.routeDetailsTitleContainer}>
                     <p>{`ETA ${this.props.route.eta.text}`}</p>
-                    <p>{`${this.props.route.duration.text} commute`}</p>
+                    <p>{`${this.props.route.duration.text}`}</p>
                 </div>
 
                 {this.props.route.directions.map((direction, index) => (
                     <RouteDirectionsBlock
-                        key={index}
+                        key={direction.title}
                         index={index}
                         travelMode={direction.travelMode}
                         title={direction.title}
