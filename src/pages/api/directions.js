@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
-    let { addresses, modes, departAt, arriveBy } = req.query;
+    let { addresses, modes, arriveBy, departAt } = req.query;
 
     const addressArray = JSON.parse(decodeURIComponent(addresses));
     const modesArray = JSON.parse(decodeURIComponent(modes));
