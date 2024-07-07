@@ -17,14 +17,14 @@ export default function Home() {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const onRoute = async (addresses, modes) => {
+  const onRoute = async (addresses, modes, dateTimeOption, dateTIme) => {
     setIsLoading(true);
     try {
-      const newRoute = await fetchRoute(addresses, modes);
+      const newRoute = await fetchRoute(addresses, modes, dateTimeOption, dateTIme);
       setRoute(newRoute);
     } catch (error) {
       console.error("Error in fetching route:", error);
-      const errorMessage = "It seems the addresses entered were either invalid or could not be processed. Try again by pasting the full correct addresses."
+      const errorMessage = "It seems the addresses & timing combinations entered were either invalid or could not be processed. Try again by pasting the full correct addresses & make sure the timings make sense."
       setError(errorMessage);
       setRoute({ directions: null, duration: null, eta: null });
     } finally {

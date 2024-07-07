@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RouteBuildingBlock from './RouteBuildingBlock';
 import ActionButton from './ActionButton';
 import styles from "@/styles/Home.module.css";
+import DateTimeSelector from './DateTimeSelector';
 
 const defaultMode = "transit"
 
@@ -10,12 +11,24 @@ class RouteBuilder extends Component {
         super(props);
         this.state = {
             addresses: ["", ""],
-            modes: [defaultMode]
+            modes: [defaultMode],
+            dateTimeOption: "Leave now",
+            dateTime: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16)
         };
         this.handleAddressChange = this.handleAddressChange.bind(this);
         this.handleModeChange = this.handleModeChange.bind(this);
         this.handleAdd = this.handleAdd.bind(this);
         this.handleRoute = this.handleRoute.bind(this);
+        this.handleDateTimeOptionChange = this.handleDateTimeOptionChange.bind(this);
+        this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
+    }
+
+    handleDateTimeOptionChange(dateTimeOption) {
+        this.setState({ dateTimeOption: dateTimeOption });
+    }
+
+    handleDateTimeChange(dateTime) {
+        this.setState({ dateTime: dateTime });
     }
 
     handleAddressChange(index, addressType, value) {
@@ -24,7 +37,7 @@ class RouteBuilder extends Component {
         if (addressType == "starting") {
             newAddresses[index] = value;
         } else if (addressType == "destination") {
-            newAddresses[index+1] = value;
+            newAddresses[index + 1] = value;
         }
         this.setState({ addresses: newAddresses });
     }
@@ -46,7 +59,7 @@ class RouteBuilder extends Component {
     }
 
     handleRoute() {
-        this.props.onRoute(this.state.addresses, this.state.modes);
+        this.props.onRoute(this.state.addresses, this.state.modes, this.state.dateTimeOption, this.state.dateTime);
     }
 
     render() {
@@ -58,27 +71,34 @@ class RouteBuilder extends Component {
                         key={index}
                         index={index}
                         startingAddress={this.state.addresses[index]}
-                        destinationAddress={this.state.addresses[index+1]}
+                        destinationAddress={this.state.addresses[index + 1]}
                         mode={this.state.modes[index]}
                         onAddressChange={this.handleAddressChange}
                         onModeChange={this.handleModeChange}
                     />
                 ))}
-                <div style={{display: 'flex', justifyContent: 'end', width: '100%', gap: '12px'}}>
-                    <ActionButton 
-                        text={"Add +"} 
-                        handleOnClick={this.handleAdd}
-                        backgroundColor={"rgba(115, 200, 144, 1)"}
-                        disabled={addDisabled}
+                <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+                    <DateTimeSelector
+                        selectedOption={this.state.dateTimeOption}
+                        selectedDate={this.state.dateTime}
+                        onOptionChange={this.handleDateTimeOptionChange}
+                        onDateChange={this.handleDateTimeChange}
                     />
-                    <ActionButton 
-                        text={"Route"} 
-                        handleOnClick={this.handleRoute}
-                        backgroundColor={"rgba(121, 196, 229, 1)"}
-                        disabled={addDisabled}
-                    />
+                    <div style={{ display: 'flex', justifyContent: 'end', gap: '12px' }}>
+                        <ActionButton
+                            text={"Add +"}
+                            handleOnClick={this.handleAdd}
+                            backgroundColor={"rgba(115, 200, 144, 1)"}
+                            disabled={addDisabled}
+                        />
+                        <ActionButton
+                            text={"Route"}
+                            handleOnClick={this.handleRoute}
+                            backgroundColor={"rgba(121, 196, 229, 1)"}
+                            disabled={addDisabled}
+                        />
+                    </div>
                 </div>
-                
             </div>
         );
     }

@@ -1,10 +1,20 @@
-.main {
+/* .main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  overflow-y: auto;
+} */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  min-height: 100vh; /* Ensure at least full viewport height */
 }
 
 .panelContainer {
@@ -229,13 +239,14 @@
   text-align: center;
   gap: 12px;
   width: 300px;
+  text-align: center;
   /* height: 300px; */
 }
-/* @media (min-width: 600px) {
+@media (min-width: 600px) {
   .modalContent {
-    max-width: 400px;
+    width: 400px;
   }
-} */
+}
 
 .loader {
   border: 16px solid #f3f3f3;
@@ -249,4 +260,68 @@
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+.dateTimePickerContainer {
+  position: relative;
+  line-height: 16px;
+}
+
+.dateTimePickerDropdownToggle {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  height: 36px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  font-weight: 600;
+}
+
+.dateTimePickerDropdownMenu {
+  position: absolute;
+  background-color: #fff;
+  z-index: 1000;
+  min-width: 150px;
+  border: 1px solid;
+}
+
+.dateTimePickerDropdownItem {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  clear: both;
+  font-weight: 400;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+  line-height: 16px; /* Ensure consistent line height */
+}
+
+.dateTimePickerDropdownItem:hover {
+  background-color: #DAE0F2
+}
+
+.dateTimePickerIconContainer {
+  display: flex;
+  align-items: center;
+}
+
+.dateTimePickerIcon {
+  margin-left: 8px; /* Adjust as needed for spacing between text and icon */
+  font-size: 16px; /* Adjust icon size */
+  height: 16px; /* Ensure fixed height */
+  width: 16px; /* Ensure fixed width */
+}
+
+.dateTimePickerText {
+  line-height: 16px; /* Ensure consistent line height */
+}
+
+.dateTimePickerInput {
+  width: fit-content;
+  font-family: inherit;
+  border: 0;
+  padding: 6px;
 }
