@@ -1,8 +1,8 @@
-import React, { Component, useRef, useEffect } from 'react';
+import React, { Component } from 'react';
 import styles from "@/styles/Home.module.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import AddressTextField from './AddressTextField';
-
 
 const modes = [
     { name: "driving", color: "38, 70, 83", title: "Driving" },
@@ -15,49 +15,64 @@ class RouteBuildingBlock extends Component {
     constructor(props) {
         super(props);
     }
-    
+
     handleAddressTextFieldChange(addressType, value) {
         this.props.onAddressChange(this.props.index, addressType, value);
-    };
+    }
 
     handleModeOptionChange(mode) {
         this.props.onModeChange(this.props.index, mode);
-    };
+    }
+
+    renderDeleteButton(backgroundColor, deletable) {
+        const buttonClass = `${styles.routeBuildingBlockGarbageButtonContainer} ${!deletable ? styles.disabled : ""}`;
+        const buttonStyle = {
+            backgroundColor: deletable ? backgroundColor : 'transparent'
+        };
+    
+        return (
+            <button disabled={!deletable} className={buttonClass} style={buttonStyle} onClick={this.props.onDelete}>
+                <FaTrashAlt style={{ width: '16px', height: '16px', visibility: deletable ? 'visible' : 'hidden' }} />
+            </button>
+        );
+    }    
 
     render() {
-        const backgroundColor = `rgba(${modes.find(option => option.name == this.props.mode).color}, 0.25)`;
+        const backgroundColor = `rgba(${modes.find(option => option.name === this.props.mode).color}, 0.25)`;
         return (
-            <div className={styles.routeBuildingBlock} style={{ backgroundColor: backgroundColor }}>
-                <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}>
-                    <NumberedMarker number={this.props.index + 1} />
-                    <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                        <AddressTextField
-                            name="starting"
-                            placeholder="Choose starting point..."
-                            value={this.props.startingAddress}
-                            onChange={(newValue) => this.handleAddressTextFieldChange('starting', newValue)}
-                            disabled={this.props.index != 0}
-                        />
-                        <AddressTextField
-                            name="destination"
-                            placeholder="Choose destination..."
-                            value={this.props.destinationAddress}
-                            onChange={(newValue) => this.handleAddressTextFieldChange('destination', newValue)}
-                            disabled={false}
-                        />
+            <div className={styles.routeBuildingBlock} style={{ backgroundColor }}>
+                <div className={styles.routeBuildingBlockForm}>
+                    <div style={{ width: '100%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}>
+                        <NumberedMarker number={this.props.index + 1} />
+                        <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                            <AddressTextField
+                                name="starting"
+                                placeholder="Choose starting point..."
+                                value={this.props.startingAddress}
+                                onChange={(newValue) => this.handleAddressTextFieldChange('starting', newValue)}
+                                disabled={this.props.index !== 0}
+                            />
+                            <AddressTextField
+                                name="destination"
+                                placeholder="Choose destination..."
+                                value={this.props.destinationAddress}
+                                onChange={(newValue) => this.handleAddressTextFieldChange('destination', newValue)}
+                                disabled={false}
+                            />
+                        </div>
+                    </div>
+                    <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', paddingTop: '16px' }}>
+                        {modes.map((option) => (
+                            <ModeOptionButton
+                                key={option.name}
+                                mode={option}
+                                isActive={option.name === this.props.mode}
+                                handleOnClick={() => this.handleModeOptionChange(option.name)}
+                            />
+                        ))}
                     </div>
                 </div>
-
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', paddingTop: '16px' }}>
-                    {modes.map((option) => (
-                        <ModeOptionButton
-                            key={option.name}
-                            mode={option}
-                            isActive={option.name == this.props.mode}
-                            handleOnClick={(e) => this.handleModeOptionChange(option.name)}
-                        />
-                    ))}
-                </div>
+                {this.renderDeleteButton(backgroundColor, this.props.deletable)}
             </div>
         );
     }
@@ -67,14 +82,11 @@ export default RouteBuildingBlock;
 
 function ModeOptionButton({ mode, isActive, handleOnClick }) {
     const alpha = isActive ? 0.6 : 0.2;
-    const backgroundColor = `rgba(${mode.color}, ${alpha})`
-    const buttonStyle = {
-        backgroundColor: backgroundColor,
-    };
+    const backgroundColor = `rgba(${mode.color}, ${alpha})`;
     return (
         <button
             className={`${styles.modeOptionButton} ${isActive ? styles.active : ''}`}
-            style={buttonStyle}
+            style={{ backgroundColor }}
             onClick={handleOnClick}>
             {mode.title}
         </button>
@@ -102,15 +114,15 @@ const NumberedMarker = ({ number }) => {
     };
 
     const numberStyle = {
-        width: '16px', // Reduced width
-        height: '16px', // Reduced height
+        width: '16px',
+        height: '16px',
         borderRadius: '50%',
         border: '2px solid black',
         color: 'black',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        fontSize: '12px', // Adjusted font size
+        fontSize: '12px',
         fontWeight: '600',
         backgroundColor: 'transparent',
     };
@@ -146,4 +158,3 @@ const NumberedMarker = ({ number }) => {
         </div>
     );
 };
-

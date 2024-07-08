@@ -21,6 +21,7 @@ class RouteBuilder extends Component {
         this.handleRoute = this.handleRoute.bind(this);
         this.handleDateTimeOptionChange = this.handleDateTimeOptionChange.bind(this);
         this.handleDateTimeChange = this.handleDateTimeChange.bind(this);
+        this.deleteLast = this.deleteLast.bind(this);
     }
 
     handleDateTimeOptionChange(dateTimeOption) {
@@ -28,8 +29,14 @@ class RouteBuilder extends Component {
     }
 
     handleDateTimeChange(dateTime) {
-        this.setState({ dateTime: dateTime });
-    }
+        try {
+            this.setState({ dateTime: dateTime });
+        } catch (error) {
+            console.error('Error setting dateTime:', error);
+            const currentDateTime = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+            this.setState({ dateTime: currentDateTime });
+        }
+    }    
 
     handleAddressChange(index, addressType, value) {
         const newAddresses = [...this.state.addresses];
@@ -62,6 +69,16 @@ class RouteBuilder extends Component {
         this.props.onRoute(this.state.addresses, this.state.modes, this.state.dateTimeOption, this.state.dateTime);
     }
 
+    deleteLast() {
+        const newAddresses = [...this.state.addresses];
+        newAddresses.pop();
+
+        const newModes = [...this.state.modes];
+        newModes.pop();
+
+        this.setState({ addresses: newAddresses, modes: newModes });
+    }
+
     render() {
         const addDisabled = this.state.addresses.at(-1) == "" || this.state.addresses.at(-2) == "";
         return (
@@ -75,6 +92,8 @@ class RouteBuilder extends Component {
                         mode={this.state.modes[index]}
                         onAddressChange={this.handleAddressChange}
                         onModeChange={this.handleModeChange}
+                        deletable={index != 0 && index == this.state.addresses.length-2}
+                        onDelete={this.deleteLast}
                     />
                 ))}
                 <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>

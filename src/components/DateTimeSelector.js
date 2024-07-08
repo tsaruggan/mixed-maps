@@ -30,7 +30,14 @@ const DateTimeSelector = ({ selectedOption, selectedDate, onOptionChange, onDate
   };
 
   const handleDateChange = (event) => {
-    onDateChange(event.target.value);
+    const newDate = event.target.value;
+    try {
+      onDateChange(newDate);
+    } catch (error) {
+      console.error('Error setting date:', error);
+      const fallbackDate = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+      onDateChange(fallbackDate);
+    }
   };
 
   const toggleDropdown = () => {
@@ -66,25 +73,31 @@ const DateTimeSelector = ({ selectedOption, selectedDate, onOptionChange, onDate
   
   const formatDateTime = (dateString) => {
     const date = new Date(dateString);
-  
+
+    if (isNaN(date.getTime())) {
+      const currentDate = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 16);
+      onDateChange(currentDate);
+      return formatDateTime(currentDate);
+    }
+
     const options = {
       hour: 'numeric',
       minute: 'numeric',
       hour12: true,
     };
-  
+
     const dateOptions = {
       month: 'short',
       day: 'numeric',
       year: 'numeric',
     };
-  
+
     const timeFormatter = new Intl.DateTimeFormat('en-US', options);
     const dateFormatter = new Intl.DateTimeFormat('en-US', dateOptions);
-  
+
     const timeString = timeFormatter.format(date);
     const dateStringFormatted = dateFormatter.format(date);
-  
+
     return `${timeString} – ${dateStringFormatted}`;
   };
 
