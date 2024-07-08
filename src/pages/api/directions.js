@@ -89,7 +89,7 @@ async function routeTripFromArrival(addresses, modes, arriveBy) {
   let departureTime = directions[0].eta.value - directions[0].duration.value;
   let duration = getRouteDuration(departureTime, eta.value);
 
-  const result = {"directions": directions, "eta": eta, "duration": duration};
+  const result = {"directions": directions, "eta": eta, "duration": duration, departureTime: formatETA(departureTime)};
   return result;
 }
 

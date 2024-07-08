@@ -26,6 +26,7 @@ class RouteOverview extends Component {
                     <p>{`ETA ${this.props.route.eta.text}`}</p>
                     <p>{`${this.props.route.duration.text}`}</p>
                 </div>
+                {this.props.route.departureTime ? <span style={{color:'red'}}>Leave around {this.props.route.departureTime}</span> : <></>}
 
                 {this.props.route.directions.map((direction, index) => (
                     <RouteDirectionsBlock
