@@ -78,40 +78,41 @@ export default function DetailedInstructions({ travelMode, instructions, startAd
                 <div style={{ fontWeight: '700', marginBottom: '6px' }}>
                     {startAddress}
                 </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    {instructions.map((instruction, index) => {
 
-                {instructions.map((instruction, index) => {
-
-                    if (instruction.mode === 'transit') {
-                        return (
-                            <div key={index} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', lineHeight: '16px', marginTop: '16px', marginBottom: '20px' }}>
-                                <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                                    <div style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'column', textAlign: 'left', maxWidth: '248px' }}>
-                                        <div>{`${instruction.departureStop} → ${instruction.arrivalStop} ${instruction.transitDetails.numStops ? `(${instruction.transitDetails.numStops} stops)` : ''}`}</div>
-                                        <span style={{ display: 'flex', justifyContent: 'flex-start', height: '16px', gap: '4px' }}>
-                                            {renderIcon(instruction.transitDetails.vehicle.localIcon)}
-                                            {renderIcon(instruction.transitDetails.vehicle.icon)}
-                                            {renderShortName(instruction.transitDetails.shortName, instruction.transitDetails.color)}
-                                            <div>
-                                                {instruction.description}
-                                            </div>
-                                        </span>
-                                    </div>
-
-
-                                    <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'right' }}>
-                                        <span>{`${timeFormat(instruction.departureTime.text)} - ${timeFormat(instruction.arrivalTime.text)}`}</span>
-                                        <span>{`${instruction.duration.text}`}</span>
-                                    </div>
-                                </div >
-                            </div>
+                        if (instruction.mode === 'transit') {
+                            return (
+                                <div key={index} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', lineHeight: '16px', marginTop: '16px', marginBottom: '20px' }}>
+                                    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                                        <div style={{ display: 'flex', justifyContent: 'flex-start', flexDirection: 'column', textAlign: 'left', maxWidth: '248px' }}>
+                                            <div>{`${instruction.departureStop} → ${instruction.arrivalStop} ${instruction.transitDetails.numStops ? `(${instruction.transitDetails.numStops} stops)` : ''}`}</div>
+                                            <span style={{ display: 'flex', justifyContent: 'flex-start', height: '16px', gap: '4px' }}>
+                                                {renderIcon(instruction.transitDetails.vehicle.localIcon)}
+                                                {renderIcon(instruction.transitDetails.vehicle.icon)}
+                                                {renderShortName(instruction.transitDetails.shortName, instruction.transitDetails.color)}
+                                                <div style={{flex: '1'}}>
+                                                    {instruction.description}
+                                                </div>
+                                            </span>
+                                        </div>
 
 
+                                        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'right' }}>
+                                            <span>{`${timeFormat(instruction.departureTime.text)} - ${timeFormat(instruction.arrivalTime.text)}`}</span>
+                                            <span>{`${instruction.duration.text}`}</span>
+                                        </div>
+                                    </div >
+                                </div>
 
-                        );
-                    } else {
-                        return renderGeneralInstruction(instruction, index);
-                    }
-                })}
+
+
+                            );
+                        } else {
+                            return renderGeneralInstruction(instruction, index);
+                        }
+                    })}
+                </div>
 
                 <div style={{ fontWeight: '700', marginTop: '4px' }}>
                     {endAddress}
