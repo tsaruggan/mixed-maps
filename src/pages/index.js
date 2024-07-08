@@ -41,6 +41,11 @@ export default function Home() {
       <Head>
         <title>Mixed Maps</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Mixed Maps" />
+        <meta property="og:description" content="Plan your next route using multiple modes of transportation!" />
+        <meta property="og:image" content="/social.jpeg" />
+        {/* <meta property="og:url" content="https://yourdomain.com" /> */}
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.panelContainer}>
