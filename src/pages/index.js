@@ -8,7 +8,7 @@ import RouteOverview from "@/components/RouteOverview";
 import ErrorModal from "@/components/ErrorModal";
 import LoadingModal from "@/components/LoadingModal"; // Import the new LoadingModal component
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import { fetchRoute } from "@/utils/requests";
 
@@ -16,12 +16,16 @@ export default function Home() {
   const [route, setRoute] = useState({ directions: null, duration: null, eta: null });
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const routeOverviewRef = useRef(null); // Create a reference
 
   const onRoute = async (addresses, modes, dateTimeOption, dateTIme) => {
     setIsLoading(true);
     try {
       const newRoute = await fetchRoute(addresses, modes, dateTimeOption, dateTIme);
       setRoute(newRoute);
+      if (routeOverviewRef.current) {
+        routeOverviewRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' }); // Scroll into view
+      }
     } catch (error) {
       console.error("Error in fetching route:", error);
       const errorMessage = "It seems the addresses & timing combinations entered were either invalid or could not be processed. Try again by pasting the full correct addresses & make sure the timings make sense."
@@ -50,7 +54,9 @@ export default function Home() {
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.panelContainer}>
           <RouteBuilder onRoute={onRoute} />
-          <RouteOverview route={route} />
+          <div ref={routeOverviewRef}> {/* Add the reference here */}
+            <RouteOverview route={route} />
+          </div>
         </div>
         {error && <ErrorModal message={error} onClose={handleCloseModal} />}
         {isLoading && <LoadingModal />} {/* Render LoadingModal when isLoading is true */}

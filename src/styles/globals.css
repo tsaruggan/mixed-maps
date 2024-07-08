@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -39,12 +40,41 @@ input[type="submit"]:focus {
 }
 
 
-input[type="text"],
+/* input[type="text"],
 input[type="password"],
 input[type="email"],
 input[type="number"],
 input[type="search"],
 textarea {
-    font-size: 16px; /* Ensure font size is 16px or larger */
+    font-size: 16px; 
+} */
+
+/* Media query for smaller devices */
+@media (max-width: 448px) {
+  * {
+    font-size: 16px;
+  }
 }
 
+button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled {
+  pointer-events: none; /* Prevent pointer events */
+  background-color: #A6A6A6; /* Disabled button background color */
+  color: #f0f0f0; /* Disabled button text color */
+  cursor: not-allowed; /* Disabled button cursor */
+}
+
+button:hover:disabled,
+input[type="button"]:hover:disabled,
+input[type="submit"]:hover:disabled {
+  background-color: #A6A6A6; /* Keep disabled button background color */
+  color: #f0f0f0; /* Keep disabled button text color */
+}
+
+button:focus:disabled,
+input[type="button"]:focus:disabled,
+input[type="submit"]:focus:disabled {
+  outline: none; /* Remove focus outline */
+  box-shadow: none; /* Remove box-shadow */
+}

@@ -103,7 +103,7 @@ class RouteBuilder extends Component {
                         onOptionChange={this.handleDateTimeOptionChange}
                         onDateChange={this.handleDateTimeChange}
                     />
-                    <div style={{ display: 'flex', justifyContent: 'end', gap: '12px' }}>
+                    <div className={styles.actionButtonHolder}>
                         <ActionButton
                             text={"Add +"}
                             handleOnClick={this.handleAdd}
