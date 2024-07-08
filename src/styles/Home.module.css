@@ -96,7 +96,7 @@
   box-sizing: border-box;
   background: #FFFFFF;
   border: 1px solid #000000;
-  padding: 14px;
+  padding: 10px;
 }
 
 .addressTextField:focus {
