@@ -11,9 +11,9 @@ export default async function handler(req, res) {
     let route = null;
     try {
       if (departAt) {
-        route = await routeTripFromDeparture(addressArray, modesArray, Number(departAt));
+        route = await routeTripFromDeparture(addressArray, modesArray, Number(departAt), decodedTimeZone);
       } else if (arriveBy) {
-        route = await routeTripFromArrival(addressArray, modesArray, Number(arriveBy));
+        route = await routeTripFromArrival(addressArray, modesArray, Number(arriveBy), decodedTimeZone);
       } else { 
         const now = Math.floor(Date.now() / 1000);
         route = await routeTripFromDeparture(addressArray, modesArray, now);
@@ -385,7 +385,12 @@ function formatETA(eta, timeZone) {
   let date = new Date(timestampInMilliseconds);
 
   // Get the time in the current timezone with 12-hour format and AM/PM
-  const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: timeZone };
+  const options = { 
+    hour: 'numeric', 
+    minute: 'numeric', 
+    hour12: true, 
+    timeZone: timeZone 
+  };
   const formattedETA = date.toLocaleTimeString('en-US', options);
 
   return formattedETA;
