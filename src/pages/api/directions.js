@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         route = await routeTripFromArrival(addressArray, modesArray, Number(arriveBy), decodedTimeZone);
       } else { 
         const now = Math.floor(Date.now() / 1000);
-        route = await routeTripFromDeparture(addressArray, modesArray, now);
+        route = await routeTripFromDeparture(addressArray, modesArray, now, decodedTimeZone);
       }
       res.status(200).json(route);
     } catch (error) {
