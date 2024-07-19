@@ -29,12 +29,12 @@ You can view a live demo of the application at [mixed-maps.vercel.app](https://m
    ```
 
 4. Set up your Google Maps API key:
-   - Enable the [Google Maps Directions API](https://developers.google.com/maps/documentation/directions).
-   - Create a `.env.local` file in the root of your project and add your API key:
+Enable the [Google Maps Directions API](https://developers.google.com/maps/documentation/directions). Create a `.env.local` file in the root of your project and add your API key.
 
      ```
      API_KEY=your_api_key_here
      ```
+
 
 5. Run the development server:
 
