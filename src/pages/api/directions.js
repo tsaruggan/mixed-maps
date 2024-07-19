@@ -44,7 +44,7 @@ async function routeTripFromDeparture(addresses, modes, departAt, timeZone) {
         throw new Error(`Invalid response`);
       }
 
-      let direction = parseDirectionResponseFromDeparture(directionResponse, departureTime);
+      let direction = parseDirectionResponseFromDeparture(directionResponse, departureTime, timeZone);
       directions.push(direction);
 
       departureTime = direction.eta.value;
@@ -76,7 +76,7 @@ async function routeTripFromArrival(addresses, modes, arriveBy, timeZone) {
         throw new Error(`Invalid response`);
       }
 
-      let direction = parseDirectionResponseFromArrival(directionResponse, arrivalTime);
+      let direction = parseDirectionResponseFromArrival(directionResponse, arrivalTime, timeZone);
       directions.unshift(direction);
       
       arrivalTime = computeNewArrivalTime(arrivalTime, direction.duration.value);
@@ -173,14 +173,14 @@ async function getDirectionsFromArrival(startAddress, destinationAddress, mode, 
   }
 }
 
-function parseDirectionResponseFromDeparture(response, departureTime) {
+function parseDirectionResponseFromDeparture(response, departureTime, timeZone) {
   const travelMode = getTravelMode(response);
   const title = getTitle(response, travelMode);
   const startAddress = getStartAddress(response);
   const endAddress = getEndAddress(response);
   const distance = getDistance(response);
   const duration = getDuration(response);
-  const eta = getETAFromDeparture(response, departureTime, duration.value);
+  const eta = getETAFromDeparture(response, departureTime, duration.value, timeZone);
   const instructions = getInstructions(response, travelMode);
   let direction = {
     "travelMode": travelMode,
@@ -195,14 +195,14 @@ function parseDirectionResponseFromDeparture(response, departureTime) {
   return direction;
 }
 
-function parseDirectionResponseFromArrival(response, arrivalTime) {
+function parseDirectionResponseFromArrival(response, arrivalTime, timeZone) {
   const travelMode = getTravelMode(response);
   const title = getTitle(response, travelMode);
   const startAddress = getStartAddress(response);
   const endAddress = getEndAddress(response);
   const distance = getDistance(response);
   const duration = getDuration(response);
-  const eta = getETAFromArrival(response, arrivalTime);
+  const eta = getETAFromArrival(response, arrivalTime, timeZone);
   const instructions = getInstructions(response, travelMode);
   let direction = {
     "travelMode": travelMode,
