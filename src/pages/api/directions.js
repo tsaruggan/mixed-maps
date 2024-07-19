@@ -2,10 +2,11 @@ import axios from "axios";
 
 export default async function handler(req, res) {
   if (req.method === 'GET') {
-    let { addresses, modes, arriveBy, departAt } = req.query;
+    let { addresses, modes, arriveBy, departAt, timeZone } = req.query;
 
     const addressArray = JSON.parse(decodeURIComponent(addresses));
     const modesArray = JSON.parse(decodeURIComponent(modes));
+    const decodedTimeZone = decodeURIComponent(timeZone);
 
     let route = null;
     try {
@@ -28,7 +29,7 @@ export default async function handler(req, res) {
   }
 }
 
-async function routeTripFromDeparture(addresses, modes, departAt) {
+async function routeTripFromDeparture(addresses, modes, departAt, timeZone) {
   let departureTime = departAt;
   let directions = [];
   for (let i = 0; i < addresses.length-1; i++) {
@@ -53,14 +54,14 @@ async function routeTripFromDeparture(addresses, modes, departAt) {
     }
   }
 
-  let eta = getRouteETA(directions);
+  let eta = getRouteETA(directions, timeZone);
   let duration = getRouteDuration(departAt, eta.value);
 
   const result = {"directions": directions, "eta": eta, "duration": duration};
   return result;
 }
 
-async function routeTripFromArrival(addresses, modes, arriveBy) {
+async function routeTripFromArrival(addresses, modes, arriveBy, timeZone) {
   let arrivalTime = arriveBy;
   let directions = [];
   for (let i = 0; i < addresses.length-1; i++) {
@@ -85,11 +86,11 @@ async function routeTripFromArrival(addresses, modes, arriveBy) {
     }
   }
 
-  let eta = getRouteETA(directions);
+  let eta = getRouteETA(directions, timeZone);
   let departureTime = directions[0].eta.value - directions[0].duration.value;
   let duration = getRouteDuration(departureTime, eta.value);
 
-  const result = {"directions": directions, "eta": eta, "duration": duration, departureTime: formatETA(departureTime)};
+  const result = {"directions": directions, "eta": eta, "duration": duration, departureTime: formatETA(departureTime, timeZone)};
   return result;
 }
 
@@ -124,10 +125,10 @@ function getRouteDuration(departureTime, eta) {
   }
 }
 
-function getRouteETA(directions) {
+function getRouteETA(directions, timeZone) {
   const value = directions.at(-1).eta.value;
   const roundedValue = Math.ceil(value / 60) * 60;
-  const text = formatETAFull(roundedValue);
+  const text = formatETAFull(roundedValue, timeZone);
   const eta = {"text": text, "value": roundedValue};
   return eta;
 }
@@ -331,7 +332,7 @@ function getDistance(direction) {
   return {"text": distance.text, "value": distance.value};
 }
 
-function getETAFromDeparture(direction, departureTime, duration) {
+function getETAFromDeparture(direction, departureTime, duration, timeZone) {
   let arrivalTime;
 
   if (direction.routes[0].legs[0].arrival_time) {
@@ -350,12 +351,12 @@ function getETAFromDeparture(direction, departureTime, duration) {
     arrivalTime += remainingSeconds;
   }
 
-  const formattedETA = formatETA(arrivalTime);
+  const formattedETA = formatETA(arrivalTime, timeZone);
   const eta = {"text": formattedETA, "value": arrivalTime};
   return eta;
 }
 
-function getETAFromArrival(direction, arrivalTime) {
+function getETAFromArrival(direction, arrivalTime, timeZone) {
   let correctArrivalTime;
 
   if (direction.routes[0].legs[0].arrival_time) {
@@ -371,12 +372,12 @@ function getETAFromArrival(direction, arrivalTime) {
   // Subtract the current seconds to round down to the start of the current minute
   correctArrivalTime -= date.getSeconds();
 
-  const formattedETA = formatETA(correctArrivalTime);
+  const formattedETA = formatETA(correctArrivalTime, timeZone);
   const eta = { "text": formattedETA, "value": correctArrivalTime };
   return eta;
 }
 
-function formatETA(eta) {
+function formatETA(eta, timeZone) {
   // Convert eta to milliseconds
   let timestampInMilliseconds = eta * 1000;
 
@@ -384,27 +385,39 @@ function formatETA(eta) {
   let date = new Date(timestampInMilliseconds);
 
   // Get the time in the current timezone with 12-hour format and AM/PM
-  const options = { hour: 'numeric', minute: 'numeric', hour12: true };
+  const options = { hour: 'numeric', minute: 'numeric', hour12: true, timeZone: timeZone };
   const formattedETA = date.toLocaleTimeString('en-US', options);
 
   return formattedETA;
 }
 
-function formatETAFull(eta) {
+function formatETAFull(eta, timeZone) {
   // Convert eta to milliseconds
-  let timestampInMilliseconds = eta * 1000;
+  const timestampInMilliseconds = eta * 1000;
 
   // Create a Date object from the timestamp
-  let date = new Date(timestampInMilliseconds);
+  const date = new Date(timestampInMilliseconds);
 
-  // Get the time in the current timezone with 12-hour format and AM/PM
-  const timeOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
+  // Define options for date and time formatting
+  const timeOptions = {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+    timeZone: timeZone  // Specify the time zone here
+  };
+
+  const dateOptions = {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    timeZone: timeZone  // Specify the time zone here
+  };
+
+  // Format time and date
   const formattedTime = date.toLocaleTimeString('en-US', timeOptions);
-
-  // Get the date in the current timezone with month, day, and year
-  const dateOptions = { month: 'short', day: 'numeric', year: 'numeric' };
   const formattedDate = date.toLocaleDateString('en-US', dateOptions);
 
+  // Combine the formatted time and date
   return `${formattedTime} – ${formattedDate}`;
 }
 

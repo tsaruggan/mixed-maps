@@ -4,8 +4,15 @@ export async function fetchRoute(addresses, modes, dateTimeOption, dateTime) {
     const encodedAddresses = encodeURIComponent(JSON.stringify(addresses));
     const encodedModes = encodeURIComponent(JSON.stringify(modes));
 
-    const unixTimestamp = Math.floor(new Date(dateTime).getTime() / 1000); // Convert dateTime to Unix seconds.
-    let URL = `/api/directions?addresses=${encodedAddresses}&modes=${encodedModes}`;
+    // Get the user's time zone
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const encodeTimeZone = encodeURIComponent(timeZone)
+
+    // Base url
+    let URL = `/api/directions?addresses=${encodedAddresses}&modes=${encodedModes}&timeZone=${encodeTimeZone}`;
+
+    // Add departure / arrival times using Unix timestamp
+    const unixTimestamp = Math.floor(new Date(dateTime).getTime() / 1000); 
     if (dateTimeOption == "Depart at") {
         URL += `&departAt=${unixTimestamp}`;
     } else if (dateTimeOption == "Arrive by") {
